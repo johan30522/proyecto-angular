@@ -23,22 +23,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'student',
-    canLoad: [AuthGuard],
-    loadChildren: (): Promise<any> =>
-      import('./modules/student/student.module').then(
-        (module) => module.StudentModule
-      ),
-  },
-  {
-    path: 'courses',
-    canLoad: [AuthGuard],
-    loadChildren: (): Promise<any> =>
-      import('./modules/courses/courses.module').then(
-        (module) => module.CoursesModule
-      ),
-  },
-  {
     path: 'departments',
     canLoad: [AuthGuard,PermissionGuard],
     data: { roleNeeded: 'Admin' },

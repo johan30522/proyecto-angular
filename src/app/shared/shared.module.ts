@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooleanTohumanPipe } from './pipes/booleanToHuman/boolean-tohuman.pipe';
 import { AgePipe } from './pipes/age/age.pipe';
-import { StudentCardComponent } from './components/student-card/student-card.component';
+
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [BooleanTohumanPipe, AgePipe, StudentCardComponent, OportunityCardComponent, CompareDirective],
+  declarations: [BooleanTohumanPipe, AgePipe, OportunityCardComponent, CompareDirective],
   imports: [
     CommonModule,
     SweetAlert2Module,
@@ -32,7 +32,7 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     SweetAlert2Module,
     ReactiveFormsModule,
-    StudentCardComponent,
+
     OportunityCardComponent,
     FontAwesomeModule,
     CompareDirective
