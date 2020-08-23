@@ -1,0 +1,48 @@
+test
+<ng-container *ngIf="oportunity">
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+
+            <div class="card w-50">
+                <div class="card-body text-dark">
+                    <form [formGroup]="form" (submit)="save()">
+                        <div class="form-group">
+                            <div class="card-header bg-secondary text-light">
+                                <h6 class="card-title">Edit Opportunity</h6>
+                            </div>
+                            <br>
+                            <h6 class="card-subtitle">Title:</h6>
+                            <p class="card-text">
+                                <input type="text" class="form-control" name="title" id="title" formControlName="title" [(ngModel)]="oportunity.title" />
+                            </p>
+                            <h6 class="card-subtitle">Creation Date:</h6>
+                            <p class="card-text">
+                                <input type="text" class="form-control" name="creationDate" id="creationDate" formControlName="creationDate" [(ngModel)]="oportunity.creationDate" />
+                            </p>
+                            <h6 class="card-subtitle">Due Date:</h6>
+                            <p class="card-text">
+                                <input type="text" class="form-control" name="dueDate" id="dueDate" formControlName="dueDate" [(ngModel)]="oportunity.dueDate" />
+                            </p>
+
+
+                            <h6 class="card-subtitle">Skill required:</h6>
+                            <p class="card-text">
+                                <textarea class="form-control" name="requiredSkills" id="requiredSkills" formControlName="requiredSkills" [(ngModel)]="oportunity.requiredSkills"></textarea>
+                            </p>
+                            <h6 class="card-subtitle">Other Skills Considered:</h6>
+                            <p class="card-text">
+                                {{ oportunity.consideredSkills }}
+                                <textarea class="form-control" name="consideredSkills" id="consideredSkills" formControlName="consideredSkills" [(ngModel)]="oportunity.consideredSkills"></textarea>
+                            </p>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</ng-container>

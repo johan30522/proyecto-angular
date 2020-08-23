@@ -1,0 +1,60 @@
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- Navigation -->
+<div class="fixed-top">
+    <header class="topbar">
+        <div class="container">
+            <div class="row">
+                <!-- social icon-->
+                <div class="col-sm-12">
+                    <ul class="social-network">
+                        <li *ngIf="isLoggedIn">
+                            <a class="waves-effect waves-dark" href="#"> {{userName}}
+                                <fa-icon [icon]="fauser"></fa-icon>
+                            </a>
+                            <div class="col-sm-2 col-xl-1 text-right">
+                                <button type="button" class="btn btn-outline-light" (click)="logout()"><fa-icon [icon]="faLogout"></fa-icon></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> Reclutamiento de Personal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive" *ngIf="isLoggedIn">
+
+                <ul class="navbar-nav ml-auto" *ngIf="permissionsService.hasRole('Admin')">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Oportunidades Vigentes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Oportunidades Finalizadas</a>
+                    </li>
+
+                </ul>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" (click)="show=!show">Catalogs</button>
+                    <div class="dropdown-menu" [ngClass]="{show: show === true}">
+                        <a class="dropdown-item" href="/departments">Departments</a>
+                        <a class="dropdown-item" href="/jobs">Jobs</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>

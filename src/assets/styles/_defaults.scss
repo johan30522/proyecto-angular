@@ -1,0 +1,27 @@
+/* * * * * * * * * * * * * * * * * * Global Styles * * * * * * * * * * * * * * * * * */
+html,
+body {
+  font-family: $font-roboto;
+  height: 100%;
+  background-color: $bg-color;
+}
+
+#Wrapper {
+  height: 100%;
+}
+
+a {
+  color: $text-color;
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+.max-content-width {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.white-bg{
+  background: $white;
+}

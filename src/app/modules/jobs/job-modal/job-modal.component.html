@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create Job</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" (submit)="createJob()">
+        <div class="form-group">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3">
+                        <p><label for="name">Job Name</label></p>
+                    </div>
+                    <div class="col-9">
+                        <p><input type="text" class="form-control" name="name" id="title" formControlName="name" /> </p>
+                    </div>
+                    <div class="col-3">
+                        <p><label for="department">Department</label></p>
+                    </div>
+                    <div class="col-9">
+                        <p><select class="form-control" name="department" id="department" formControlName="department">
+                            <option value="" disabled selected>select an option</option>
+                            <option *ngFor="let depto of listDeptos" [value]="depto.id">{{depto.name}}</option>
+                          </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-actions text-right">
+            <button type="button" class="btn btn-outline-dark mr-3" (click)="closeModal()">Close</button>
+            <button type="submit" class="btn btn-primary">Create Job</button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+
+@import '~bootstrap/scss/bootstrap';
+@import '~ngx-toastr/toastr';
+@import 'assets/styles/vars';
+@import 'assets/styles/defaults';
+@import 'assets/styles/tables';
+@import 'assets/styles/footer';
+@import 'assets/styles/header';

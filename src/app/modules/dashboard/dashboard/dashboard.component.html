@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-4">
+            <h1>List</h1>
+            <button type="button" (click)="toggleVisible()" class="btn btn-primary">Visible</button>
+
+            <button type="button" (click)="showSuccess()" class="btn btn-primary">Show message</button>
+
+            <ul *ngIf="visible">
+                <li *ngFor="let person of list" class="row">
+                    <div class="col-3">
+                        <p>Name</p>
+                    </div>
+                    <div class="col-9">
+                        <p>{{ person.firstname }}</p>
+                    </div>
+                    <div class="col-3">
+                        <p>LastName</p>
+                    </div>
+                    <div class="col-9">
+                        <p>{{ person.lastname }}</p>
+                    </div>
+                    <div class="col-3">
+                        <p>Age</p>
+                    </div>
+                    <div class="col-9">
+                        <p>{{ person.age | age}}</p>
+                    </div>
+                    <div class="col-3">
+                        <p>Address</p>
+                    </div>
+                    <div class="col-9">
+                        <p>{{ person.address }}</p>
+                    </div>
+                    <div class="col-3">
+                        <p>Is Active </p>
+                    </div>
+                    <div class="col-9">
+                        <p>{{ person.active | booleanTohuman }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

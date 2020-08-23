@@ -1,0 +1,40 @@
+<ng-container *ngIf="student">
+    <div class="container-fluid student-card">
+        <div class="row">
+            <div class="col-3">
+                <p>Name</p>
+            </div>
+            <div class="col-9">
+                <p>{{ student.firstname }}</p>
+            </div>
+            <div class="col-3">
+                <p>LastName</p>
+            </div>
+            <div class="col-9">
+                <p>{{ student.lastname }}</p>
+            </div>
+            <div class="col-3">
+                <p>Age</p>
+            </div>
+            <div class="col-9">
+                <p>{{ student.age | age}}</p>
+            </div>
+            <div class="col-3">
+                <p>Address</p>
+            </div>
+            <div class="col-9">
+                <p>{{ student.address }}</p>
+            </div>
+            <div class="col-3">
+                <p>Is Active </p>
+            </div>
+            <div class="col-9">
+                <p>{{ student.active | booleanTohuman }}</p>
+            </div>
+            <div class="col-9">
+                <button type="button" class="btn btn-primary" (click)="studentSelect(student)">Select this student</button>
+            </div>
+        </div>
+    </div>
+
+</ng-container>

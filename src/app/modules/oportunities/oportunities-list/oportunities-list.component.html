@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row justify-content-center"></div>
+
+    <h1>List of Actives Oportunities</h1>
+
+
+
+
+
+    <div class="row justify-content-center">
+        <br>
+        <button type="button" (click)="inactiveOportunity()" class="btn btn-info mr-1">Inactive all Oportunities <fa-icon [icon]="famulti"></fa-icon></button>
+        <button href="#" type="button" (click)="inactiveOportunity()" class="btn btn-info">New Oportunity <fa-icon [icon]="fanew"></fa-icon></button>
+
+
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div *ngFor="let item of list">
+
+            <reclutamiento-oportunity-card [oportunity]="item" (onOportunitySelected)="showOportunityInformation($event)"></reclutamiento-oportunity-card>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "WELCOME": "Hola {{value}}",
+  "STUDENTS": {
+    "TITLE": "Página de Estudiantes"
+  },
+  "LOGIN":{
+    "TITLE": "Pantalla de ingreso"
+  }
+}
