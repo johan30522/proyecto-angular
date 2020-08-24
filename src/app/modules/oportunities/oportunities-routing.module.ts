@@ -9,11 +9,11 @@ const routes: Routes =  [
     component: OportunitiesListComponent,
   },
   {
-    path: ':oportunityId',
+    path: 'details/:oportunityId',
     component: OportunitiesDetailComponent,
   },
   {
-    path: '/new/',
+    path: 'new',
     component: OportunitiesDetailComponent,
   }
 

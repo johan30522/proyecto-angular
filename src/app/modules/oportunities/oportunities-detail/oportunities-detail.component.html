@@ -1,5 +1,5 @@
 test
-<ng-container *ngIf="oportunity">
+<ng-container>
 
     <div class="container-fluid">
 
@@ -15,27 +15,39 @@ test
                             <br>
                             <h6 class="card-subtitle">Title:</h6>
                             <p class="card-text">
-                                <input type="text" class="form-control" name="title" id="title" formControlName="title" [(ngModel)]="oportunity.title" />
+                                <input type="text" class="form-control" name="title" id="title" formControlName="title" />
                             </p>
                             <h6 class="card-subtitle">Creation Date:</h6>
                             <p class="card-text">
-                                <input type="text" class="form-control" name="creationDate" id="creationDate" formControlName="creationDate" [(ngModel)]="oportunity.creationDate" />
+                                <input type="text" class="form-control" name="creationDate" id="creationDate" formControlName="creationDate" />
                             </p>
                             <h6 class="card-subtitle">Due Date:</h6>
                             <p class="card-text">
-                                <input type="text" class="form-control" name="dueDate" id="dueDate" formControlName="dueDate" [(ngModel)]="oportunity.dueDate" />
+                                <input type="text" class="form-control" name="dueDate" id="dueDate" formControlName="dueDate" />
                             </p>
 
 
                             <h6 class="card-subtitle">Skill required:</h6>
                             <p class="card-text">
-                                <textarea class="form-control" name="requiredSkills" id="requiredSkills" formControlName="requiredSkills" [(ngModel)]="oportunity.requiredSkills"></textarea>
+                                <textarea class="form-control" name="requiredSkills" id="requiredSkills" formControlName="requiredSkills"></textarea>
                             </p>
                             <h6 class="card-subtitle">Other Skills Considered:</h6>
                             <p class="card-text">
-                                {{ oportunity.consideredSkills }}
-                                <textarea class="form-control" name="consideredSkills" id="consideredSkills" formControlName="consideredSkills" [(ngModel)]="oportunity.consideredSkills"></textarea>
+                                <textarea class="form-control" name="consideredSkills" id="consideredSkills" formControlName="consideredSkills"></textarea>
                             </p>
+
+                            <h6 class="card-subtitle">Job:</h6>
+                            <p class="card-text">
+
+                                <select class="form-control" name="job" id="job" formControlName="job">
+                                    <option value="" disabled selected>select an option</option>
+                                    <option *ngFor="let job of listJobs" [value]="job.id">{{job.name}}</option>
+                                  </select>
+
+                            </p>
+
+
+
                             <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>

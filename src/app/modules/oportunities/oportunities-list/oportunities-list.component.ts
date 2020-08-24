@@ -3,6 +3,7 @@ import { Oportunity } from '../../../shared/models/oportunity';
 import { ToastrService } from 'ngx-toastr';
 import { OportunitiesService } from '../../../core/data-services/oportunities/oportunities.service';
 import { faFile,faCheckSquare} from '@fortawesome/free-solid-svg-icons';
+import { JobsService } from '../../../core/data-services/jobs/jobs.service';
 
 @Component({
   selector: 'reclutamiento-oportunities-list',
@@ -17,13 +18,18 @@ export class OportunitiesListComponent implements OnInit {
 
   constructor(
     private toastr: ToastrService,
-    private readonly oportunityService:OportunitiesService
+    private readonly oportunityService:OportunitiesService,
+    private readonly jobService:JobsService
 
   ) { }
 
   ngOnInit(): void {
     this.getListOportunities();
     console.log(this.list);
+  }
+
+  private loadJobs():void{
+
   }
   private getListOportunities(): void {
     this.oportunityService.getOportunities().subscribe(
