@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor/auth-interceptor.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -16,14 +18,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     SweetAlert2Module.forRoot(),
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     HeaderComponent, 
     FooterComponent,
     ReactiveFormsModule,
     SweetAlert2Module,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TranslateModule
   ],
   providers:[
     {

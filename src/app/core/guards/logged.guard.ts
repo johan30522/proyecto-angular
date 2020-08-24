@@ -11,7 +11,7 @@ export class LoggedGuard implements CanActivate {
 
   public canActivate(route: ActivatedRouteSnapshot): boolean | UrlTree {
     if (this.authenticationService.isLoggedIn()) {
-      return this.router.createUrlTree(['/', 'dashboard']);
+      return this.router.createUrlTree(['/', 'oportunities']);
     }
 
     return true;

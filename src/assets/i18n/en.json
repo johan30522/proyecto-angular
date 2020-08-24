@@ -1,9 +1,55 @@
 {
-  "WELCOME": "Hello {{value}}",
-  "STUDENTS": {
-    "TITLE": "Students Page"
-  },
-  "LOGIN":{
-    "TITLE": "Login Screen"
-  }
+    "WELCOME": "Hello {{value}}",
+    "STUDENTS": {
+        "TITLE": "Students Page"
+    },
+    "LOGIN": {
+        "TITLE": "Login Screen",
+        "FORGOTPASSWORD": "Forgot Password?",
+        "SIGNUP": "Sign up",
+        "SIGNIN": "Sign in",
+        "EMAIL_LABEL": "Email",
+        "PASSWORD_LABEL": "Password"
+    },
+    "SIGNUP": {
+        "TITLE": "Join our Human Capital database",
+        "SIGNUP": "Sign up",
+        "CREATE": "Create User",
+        "USERNAME_LABEL": "User Name",
+        "BACK": "Back",
+        "SIGNIN": "Sign in",
+        "EMAIL_LABEL": "Email",
+        "PASSWORD_LABEL": "Password",
+        "CONFIRMPASSWORD_LABEL": "Password"
+    },
+    "HEADER": {
+        "TITLE": "Recruitment of Human Personnel",
+        "OPEN_OPPS": "Open Opportunities",
+        "CLOSED_OPPS": "Closed Opportunities",
+        "CATALOGS": "Departments",
+        "DEPARTMENTS": "Departments",
+        "JOBS": "Jobs"
+    },
+    "OPPORTUNITY": {
+        "TITLE_OPEN": "List of Actives Opportunities",
+        "TITLE_CLOSED": "List of closed Opportunities",
+        "CODE_LABEL": "Code",
+        "TITTLE_LABEL": "Tittle",
+        "CREATIONDATEO_LABEL": "Creation Date",
+        "DUEDATE_LABEL": "Due Date",
+        "SKILLS_LABEL": "Skill required",
+        "OTHERSKILLS_LABEL": "Other Skills Considered",
+        "JOB_LABEL": "Job",
+        "DEPARTMENT_LABEL": "Department",
+        "EDITOPP_TITTLE": "Edit Opportunity",
+        "STATUS_LABEL": "Status"
+    },
+    "GENERAL": {
+        "EDIT_BUTTON": "Edit",
+        "DESACTIVE_BUTTON": "Desactive",
+        "NEWOPP_BUTTON": "New Opportunity",
+        "DESACTIVEALL_BUTTON": "Desactive all",
+        "BACK_BUTTON": "Back",
+        "SAVE_BUTTON": "Save"
+    }
 }

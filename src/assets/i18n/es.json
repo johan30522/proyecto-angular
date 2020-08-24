@@ -1,9 +1,56 @@
 {
-  "WELCOME": "Hola {{value}}",
-  "STUDENTS": {
-    "TITLE": "Página de Estudiantes"
-  },
-  "LOGIN":{
-    "TITLE": "Pantalla de ingreso"
-  }
+    "WELCOME": "Hola {{value}}",
+    "STUDENTS": {
+        "TITLE": "Página de Estudiantes"
+    },
+    "LOGIN": {
+        "TITLE": "Pantalla de ingreso",
+        "FORGOTPASSWORD": "Olvidó la Contraseña?",
+        "SIGNUP": "Registrarse",
+        "SIGNIN": "Ingresar",
+        "EMAIL_LABEL": "Usuario",
+        "PASSWORD_LABEL": "Contraseña"
+    },
+    "SIGNUP": {
+        "TITLE": "Unete a nuestra base de datos de Capital Humano",
+        "SIGNUP": "Sign up",
+        "USERNAME_LABEL": "Usuario",
+        "CREATE": "Crear Usuario",
+        "BACK": "Regresar",
+        "SIGNIN": "Ingresar",
+        "EMAIL_LABEL": "Correo",
+        "PASSWORD_LABEL": "Contraseña",
+        "CONFIRMPASSWORD_LABEL": "Confirmar Contraseña"
+    },
+    "HEADER": {
+        "TITLE": "Reclutamiento de Personal Humano",
+        "OPEN_OPPS": "Oportunidades Abiertas",
+        "CLOSED_OPPS": "Oportunidades Cerradas",
+        "CATALOGS": "Catalogos",
+        "DEPARTMENTS": "Departamentos",
+        "JOBS": "Puestos"
+    },
+    "OPPORTUNITY": {
+        "TITLE_OPEN": "Lista de Oportunidades Abiertas",
+        "TITLE_CLOSED": "Lista de Oportunidades Cerradas",
+        "CODE_LABEL": "Código",
+        "TITTLE_LABEL": "Título",
+        "CREATIONDATEO_LABEL": "Fecha de Creación",
+        "DUEDATE_LABEL": "Fecha de Venciemiento",
+        "SKILLS_LABEL": "Habilidades REqueridas",
+        "OTHERSKILLS_LABEL": "Otras habilidades Consideradas",
+        "JOB_LABEL": "Puesto",
+        "DEPARTMENT_LABEL": "Departamento",
+        "EDITOPP_TITTLE": "Editar Oportunidad",
+        "STATUS_LABEL": "Status"
+    },
+    "GENERAL": {
+        "EDIT_BUTTON": "Editar",
+        "DESACTIVE_BUTTON": "Desactivar",
+        "NEWOPP_BUTTON": "Nueva Oportunidad",
+        "DESACTIVEALL_BUTTON": "Desactivar Todo",
+        "BACK_BUTTON": "Atras",
+        "SAVE_BUTTON": "Salvar"
+    }
+
 }

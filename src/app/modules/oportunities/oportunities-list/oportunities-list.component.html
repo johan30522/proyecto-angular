@@ -1,16 +1,16 @@
 <div class="container-fluid">
     <div class="row justify-content-center"></div>
 
-    <h1>List of Actives Opportunities</h1>
+    <h1>{{"OPPORTUNITY.TITLE_OPEN" | translate }}</h1>
 
 
 
 
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-end">
         <br>
-        <button type="button" (click)="inactiveOportunity()" class="btn btn-info mr-1">Inactive all Opportunities <fa-icon [icon]="famulti"></fa-icon></button>
-        <button [routerLink]="['/oportunities/new']" type="button" (click)="inactiveOportunity()" class="btn btn-info">New Opportunity <fa-icon [icon]="fanew"></fa-icon></button>
+        <button type="button" (click)="inactiveOportunity()" class="btn btn-info mr-1">{{"GENERAL.DESACTIVEALL_BUTTON" | translate }} <fa-icon [icon]="famulti"></fa-icon></button>
+        <button [routerLink]="['/oportunities/new']" type="button" (click)="inactiveOportunity()" class="btn btn-info">{{"GENERAL.NEWOPP_BUTTON" | translate }} <fa-icon [icon]="fanew"></fa-icon></button>
 
 
     </div>

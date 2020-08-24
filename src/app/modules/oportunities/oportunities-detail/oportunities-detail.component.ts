@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Job } from '../../../shared/models/jobs.model';
 import { JobsService } from '../../../core/data-services/jobs/jobs.service';
 import { ToastrService } from 'ngx-toastr';
+import { faDoorOpen, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -18,16 +19,20 @@ export class OportunitiesDetailComponent implements OnInit {
   public submitted: boolean;
   public oportunity: Oportunity;
   private isEditMode: boolean;
-  public listJobs:Job[];
+  public listJobs: Job[];
 
   public form: FormGroup;
+
+  faDorOpen = faDoorOpen;
+
+  faarrow = faArrowCircleLeft;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly opportunitiesService: OportunitiesService,
-    private readonly jobService:JobsService,
+    private readonly jobService: JobsService,
     private formBuilder: FormBuilder,
-    private toastr:ToastrService,
+    private toastr: ToastrService,
     private readonly router: Router
 
   ) { }
@@ -52,7 +57,8 @@ export class OportunitiesDetailComponent implements OnInit {
   private patchValueForm(): void {
     console.log('patchValue');
     console.log(this.oportunity);
-    this.form.patchValue(this.oportunity)
+    this.form.patchValue(this.oportunity);
+    this.form.patchValue({ job: this.oportunity.job.id.toString() });
 
   }
 
@@ -79,12 +85,12 @@ export class OportunitiesDetailComponent implements OnInit {
     )
 
   }
-  private loadJobs():void{
+  private loadJobs(): void {
     this.jobService.getJobs().subscribe(
-      (result)=>{
-        this.listJobs=result;
+      (result) => {
+        this.listJobs = result;
       },
-      (error)=>{
+      (error) => {
         this.toastr.error(error);
       }
     );
@@ -93,35 +99,32 @@ export class OportunitiesDetailComponent implements OnInit {
     console.log('submited form');
     this.submitted = true;
     this.errorMsg = '';
-    //console.log(this.form.value);
     if (!this.form.valid) {
       return;
     }
-    let oppEdit:Oportunity;
-    if (this.isEditMode) {
-      oppEdit=this.form.value
-      oppEdit.id=this.oportunity.id;
-      this.opportunitiesService.editOportunuity(oppEdit).subscribe(
-        ()=>{
-          this.toastr.success('Opportunity Updated');
-          this.router.navigateByUrl('/oportunities');
-        }
-      )
-    }else{
-      this.jobService.getJob(this.form.value.job).subscribe((result)=>{
-        let job:Job=result;
-        oppEdit=this.form.value;
-        oppEdit.job=job;
+    let oppEdit: Oportunity;
+    let job: Job;
+
+    this.jobService.getJob(this.form.value.job).subscribe((result) => {
+      job = result;
+      oppEdit = this.form.value
+      oppEdit.id = this.oportunity.id;
+      if (this.isEditMode) {
+        this.opportunitiesService.editOportunuity(oppEdit).subscribe(
+          () => {
+            this.toastr.success('Opportunity Updated');
+            this.router.navigateByUrl('/oportunities');
+          }
+        )
+      } else {
         this.opportunitiesService.createOportunity(oppEdit).subscribe(
-          ()=>{
+          () => {
             this.toastr.success('Opportunity Created');
             this.router.navigateByUrl('/oportunities');
           }
         )
-      })
-     console.log(oppEdit);
-    }
-
+      }
+    })
   }
 
 }

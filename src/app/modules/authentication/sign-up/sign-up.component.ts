@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Credentials } from '../../../shared/models/credentials.model';
-import { faSign, faDoorOpen, faUnlock } from '@fortawesome/free-solid-svg-icons';
+import { faSign, faDoorOpen, faUnlock,faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { User } from '../../../shared/models/user';
 import { ToastrService } from 'ngx-toastr';
 import { UserAvailableService } from './../../../core/data-services/available-new-user/available-user.service';
@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
   faSign = faSign;
   faDorOpen = faDoorOpen;
   faUnlock = faUnlock;
+  faarrow=faArrowCircleLeft;
 
   constructor(
     private toastr: ToastrService,

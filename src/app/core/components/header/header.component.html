@@ -25,7 +25,7 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> Reclutamiento de Personal</a>
+            <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> {{ "HEADER.TITLE" | translate }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,19 +34,27 @@
                 <ul class="navbar-nav ml-auto" *ngIf="permissionsService.hasRole('Admin')">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Oportunidades Vigentes</a>
+                        <a class="nav-link" [routerLink]="['/oportunities']">{{ "HEADER.OPEN_OPPS" | translate }}</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Oportunidades Finalizadas</a>
+                        <a class="nav-link" [routerLink]="['/oportunities']">{{ "HEADER.CLOSED_OPPS" | translate }}</a>
                     </li>
 
                 </ul>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" (click)="show=!show">Catalogs</button>
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" (click)="show=!show">{{ "HEADER.CATALOGS" | translate }}</button>
                     <div class="dropdown-menu" [ngClass]="{show: show === true}">
-                        <a class="dropdown-item" href="/departments">Departments</a>
-                        <a class="dropdown-item" href="/jobs">Jobs</a>
+                        <a class="dropdown-item" [routerLink]="['/departments']">{{ "HEADER.DEPARTMENTS" | translate }}</a>
+                        <a class="dropdown-item" [routerLink]="['/jobs']">{{ "HEADER.JOBS" | translate }}</a>
+                    </div>
+                </div>
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Action - 1</button>
+                        <button ngbDropdownItem>Another Action</button>
+                        <button ngbDropdownItem>Something else is here</button>
                     </div>
                 </div>
 

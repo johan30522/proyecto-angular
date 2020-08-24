@@ -15,14 +15,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'dashboard',
-    canLoad: [AuthGuard],
-    loadChildren: (): Promise<any> =>
-      import('./modules/dashboard/dashboard.module').then(
-        (module) => module.DashboardModule
-      ),
-  },
-  {
     path: 'departments',
     canLoad: [AuthGuard,PermissionGuard],
     data: { roleNeeded: 'Admin' },

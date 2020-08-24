@@ -10,33 +10,33 @@ test
                     <form [formGroup]="form" (submit)="save()">
                         <div class="form-group">
                             <div class="card-header bg-secondary text-light">
-                                <h6 class="card-title">Edit Opportunity</h6>
+                                <h6 class="card-title">{{ "OPPORTUNITY.EDITOPP_TITTLE" | translate }}</h6>
                             </div>
                             <br>
-                            <h6 class="card-subtitle">Title:</h6>
+                            <h6 class="card-subtitle">{{ "OPPORTUNITY.TITTLE_LABEL" | translate }}:</h6>
                             <p class="card-text">
                                 <input type="text" class="form-control" name="title" id="title" formControlName="title" />
                             </p>
-                            <h6 class="card-subtitle">Creation Date:</h6>
+                            <h6 class="card-subtitle">{{ "OPPORTUNITY.CREATIONDATEO_LABEL" | translate }}:</h6>
                             <p class="card-text">
                                 <input type="text" class="form-control" name="creationDate" id="creationDate" formControlName="creationDate" />
                             </p>
-                            <h6 class="card-subtitle">Due Date:</h6>
+                            <h6 class="card-subtitle">{{ "OPPORTUNITY.DUEDATE_LABEL" | translate }}:</h6>
                             <p class="card-text">
                                 <input type="text" class="form-control" name="dueDate" id="dueDate" formControlName="dueDate" />
                             </p>
 
 
-                            <h6 class="card-subtitle">Skill required:</h6>
+                            <h6 class="card-subtitle">{{ "OPPORTUNITY.SKILLS_LABEL" | translate }}:</h6>
                             <p class="card-text">
                                 <textarea class="form-control" name="requiredSkills" id="requiredSkills" formControlName="requiredSkills"></textarea>
                             </p>
-                            <h6 class="card-subtitle">Other Skills Considered:</h6>
+                            <h6 class="card-subtitle">{{ "OPPORTUNITY.OTHERSKILLS_LABEL" | translate }}:</h6>
                             <p class="card-text">
                                 <textarea class="form-control" name="consideredSkills" id="consideredSkills" formControlName="consideredSkills"></textarea>
                             </p>
 
-                            <h6 class="card-subtitle">Job:</h6>
+                            <h6 class="card-subtitle">{{"OPPORTUNITY.JOB_LABEL" | translate }}:</h6>
                             <p class="card-text">
 
                                 <select class="form-control" name="job" id="job" formControlName="job">
@@ -47,8 +47,9 @@ test
                             </p>
 
 
+                            <button type="button" [routerLink]="['/oportunities']" class="btn btn-primary float-right mr-1"><fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}</button>
+                            <button type="submit" class="btn btn-primary">{{ "GENERAL.SAVE_BUTTON" | translate }}</button>
 
-                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>

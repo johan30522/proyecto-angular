@@ -8,34 +8,34 @@
                         {{ oportunity.title.substring(0,70) + ( (oportunity.title.length > 70) ? '...' : '') }}</h6>
                 </div>
                 <br>
-                <h6 class="card-subtitle">Code:</h6>
+                <h6 class="card-subtitle">{{"OPPORTUNITY.CODE_LABEL" | translate }}:</h6>
                 <p class="card-text">
                     {{ oportunity.id }}
                 </p>
-                <h6 class="card-subtitle">Creation Date:</h6>
+                <h6 class="card-subtitle">{{"OPPORTUNITY.CREATIONDATEO_LABEL" | translate }}:</h6>
                 <p class="card-text">
                     {{ oportunity.creationDate }}
                 </p>
-                <h6 class="card-subtitle">Due Date:</h6>
+                <h6 class="card-subtitle">{{"OPPORTUNITY.DUEDATE_LABEL" | translate }}:</h6>
                 <p class="card-text">
                     {{ oportunity.dueDate }}
                 </p>
-                <h6 class="card-subtitle">Job Name:</h6>
+                <h6 class="card-subtitle">{{"OPPORTUNITY.JOB_LABEL" | translate }}:</h6>
                 <p class="card-text">
                     {{oportunity.job.name}}
                 </p>
-                <h6 class="card-subtitle">Department:</h6>
+                <h6 class="card-subtitle">{{"OPPORTUNITY.DEPARTMENT_LABEL" | translate }}:</h6>
                 <p class="card-text">
                     {{oportunity.job?.department?.name}}
                 </p>
-                <h6 class="card-subtitle">Status:</h6>
+                <h6 class="card-subtitle">{{"OPPORTUNITY.STATUS_LABEL" | translate }}:</h6>
                 <p class="card-text">
                     {{oportunity.status}}
                 </p>
             </div>
             <div class="card-footer bg-transparent border-info">
-                <a href="#" class="btn btn-info float-right mr-1">Desactive <fa-icon [icon]="faDesactive"></fa-icon></a>
-                <a [routerLink]="['/oportunities/details/'+oportunity.id]" class="btn btn-info float-right mr-1">Edit <fa-icon [icon]="faPen"></fa-icon></a>
+                <a href="#" class="btn btn-info float-right mr-1">{{"GENERAL.DESACTIVE_BUTTON" | translate }} <fa-icon [icon]="faDesactive"></fa-icon></a>
+                <a [routerLink]="['/oportunities/details/'+oportunity.id]" class="btn btn-info float-right mr-1">{{"GENERAL.EDIT_BUTTON" | translate }} <fa-icon [icon]="faPen"></fa-icon></a>
 
             </div>
         </div>
