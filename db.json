@@ -226,16 +226,13 @@
       }
     },
     {
-      "id": 3,
       "title": "Encargado de Servicios MQ3",
       "creationDate": "2020-07-29T16:00:00Z",
       "dueDate": "2020-07-29T16:00:00Z",
       "requiredSkills": "Conocimiento en WAS MQ",
       "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist"
-      }
+      "job": "1",
+      "id": 3
     },
     {
       "id": 4,
@@ -353,6 +350,14 @@
       "uiConfirmPassword": "111",
       "role": "Admin",
       "id": 1
+    },
+    {
+      "email": "juan@gmail.com",
+      "username": "juan",
+      "password": "123",
+      "uiConfirmPassword": "123",
+      "role": "user",
+      "id": 3
     }
   ],
   "login": {

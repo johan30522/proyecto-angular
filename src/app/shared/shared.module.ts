@@ -10,7 +10,7 @@ import { OportunityCardComponent } from './components/oportunity-card/oportunity
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CompareDirective } from './directives/compare-directive/compare.directive';
 import { RouterModule } from '@angular/router';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -23,7 +23,8 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   exports: [
     CommonModule,

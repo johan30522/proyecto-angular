@@ -9,7 +9,7 @@ import { AuthInterceptorService } from './services/auth-interceptor/auth-interce
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,7 +20,9 @@ import { TranslateModule } from '@ngx-translate/core';
     ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule,
-    TranslateModule
+    TranslateModule,
+    NgbModule
+    
   ],
   exports: [
     HeaderComponent, 
