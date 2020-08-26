@@ -15,6 +15,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
+
 @NgModule({
   declarations: [BooleanTohumanPipe, AgePipe, OportunityCardComponent, CompareDirective],
   imports: [

@@ -46,7 +46,7 @@
     },
     "GENERAL": {
         "EDIT_BUTTON": "Editar",
-        "DESACTIVE_BUTTON": "Desactivar",
+        "DESACTIVE_BUTTON": "Cambiar Estado",
         "NEWOPP_BUTTON": "Nueva Oportunidad",
         "DESACTIVEALL_BUTTON": "Desactivar Todo",
         "BACK_BUTTON": "Atras",

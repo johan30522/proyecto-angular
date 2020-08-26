@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Oportunity } from '../../../shared/models/oportunity';
 import { ToastrService } from 'ngx-toastr';
 import { OportunitiesService } from '../../../core/data-services/oportunities/oportunities.service';
-import { faFile,faCheckSquare} from '@fortawesome/free-solid-svg-icons';
+import { faFile, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { JobsService } from '../../../core/data-services/jobs/jobs.service';
 
 @Component({
@@ -13,13 +13,13 @@ import { JobsService } from '../../../core/data-services/jobs/jobs.service';
 export class OportunitiesListComponent implements OnInit {
 
   public list: Oportunity[];
-  fanew=faFile;
-  famulti=faCheckSquare;
+  fanew = faFile;
+  famulti = faCheckSquare;
 
   constructor(
     private toastr: ToastrService,
-    private readonly oportunityService:OportunitiesService,
-    private readonly jobService:JobsService
+    private readonly oportunityService: OportunitiesService,
+    private readonly jobService: JobsService
 
   ) { }
 
@@ -28,25 +28,41 @@ export class OportunitiesListComponent implements OnInit {
     console.log(this.list);
   }
 
-  private loadJobs():void{
+  private loadJobs(): void {
 
   }
   private getListOportunities(): void {
     this.oportunityService.getOportunities().subscribe(
-      (result:Oportunity[])=>{
+      (result: Oportunity[]) => {
         this.list = result;
       },
-      (error)=>{
+      (error) => {
         console.error(error);
       }
     )
   }
-    public showOportunityInformation(oportunity:Oportunity):void{
-      console.log(oportunity);
+  public showOportunityInformation(oportunity: Oportunity): void {
+    console.log(oportunity);
+    let statusstr:string;
+    if(oportunity.status==='Closed'){
+      statusstr='Open'
+    }else{
+      statusstr='Closed'
     }
-    public inactiveOportunity(): void {
-      this.list.forEach((item) => {
-        //item.active = false;
+    this.oportunityService.changeStatus(oportunity.id, statusstr).subscribe(() => {
+      this.getListOportunities();
+    },
+      (error) => {
+        console.error(error);
       });
-    }
+  }
+
+  public inactiveOportunity(): void {
+    this.list.forEach((item) => {
+      //item.active = false;
+    });
+  }
+  public TestConfirm():void{
+ 
+  }
 }

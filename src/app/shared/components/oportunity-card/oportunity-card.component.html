@@ -1,6 +1,6 @@
 <ng-container *ngIf="oportunity">
     <div class="col-auto mb-3">
-        <div class="card text-white border-info bg-light mb-3" style="width: 18rem; height: 30rem;">
+        <div class="card text-white border-info bg-light mb-3 rounded" style="width: 20rem; height: 32rem;">
             <div class="card-body text-dark">
 
                 <div class="card-header bg-secondary text-light" style="height: 5rem;">
@@ -34,8 +34,12 @@
                 </p>
             </div>
             <div class="card-footer bg-transparent border-info">
-                <a href="#" class="btn btn-info float-right mr-1">{{"GENERAL.DESACTIVE_BUTTON" | translate }} <fa-icon [icon]="faDesactive"></fa-icon></a>
+
+                <button type="button" class="btn btn-info float-right mr-1" (click)="oportunitytSelect(oportunity)">{{"GENERAL.DESACTIVE_BUTTON" | translate }}<fa-icon [icon]="faDesactive"></fa-icon></button>
+
                 <a [routerLink]="['/oportunities/details/'+oportunity.id]" class="btn btn-info float-right mr-1">{{"GENERAL.EDIT_BUTTON" | translate }} <fa-icon [icon]="faPen"></fa-icon></a>
+
+
 
             </div>
         </div>

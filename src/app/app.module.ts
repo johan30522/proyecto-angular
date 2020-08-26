@@ -12,7 +12,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpLoaderFactory } from './core/i18n/loaderFactory';
 
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import { HttpLoaderFactory } from './core/i18n/loaderFactory';
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
     AppRoutingModule,
+    SweetAlert2Module.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

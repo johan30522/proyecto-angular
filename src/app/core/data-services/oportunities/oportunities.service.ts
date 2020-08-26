@@ -40,4 +40,9 @@ export class OportunitiesService {
       .delete(`${this.apiPath}/${oportunityId}`)
       .pipe(timeout(CONFIG.timeoutRequest));
   }
+  public changeStatus(oportunityId: number, status: String): Observable<any> {
+    return this.http
+      .patch(`${this.apiPath}/${oportunityId}`, { status: status })
+      .pipe(timeout(CONFIG.timeoutRequest));
+  }
 }
