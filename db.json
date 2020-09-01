@@ -380,13 +380,6 @@
         }
     ],
     "users": [{
-            "email": "jjoharr@gmail.com",
-            "username": "johan ",
-            "txtPassword": "123",
-            "txtConfirmPassword": "123",
-            "id": 2
-        },
-        {
             "email": "admin@gmail.com",
             "username": "admin",
             "password": "111",
@@ -401,35 +394,11 @@
             "uiConfirmPassword": "123",
             "role": "user",
             "id": 3
-        },
-        {
-            "email": "pedro@gmail.com",
-            "username": "pedro",
-            "password": "111",
-            "uiConfirmPassword": "111",
-            "role": "user",
-            "id": 4
-        },
-        {
-            "email": "ccoto@gmail.com",
-            "username": "ccoto",
-            "password": "111",
-            "uiConfirmPassword": "111",
-            "role": "user",
-            "id": 5
-        },
-        {
-            "email": "123",
-            "username": "132",
-            "password": "222",
-            "uiConfirmPassword": "222",
-            "role": "user",
-            "id": 6
         }
     ],
     "login": {
         "token": "858GFKHGKHJKJGHLKHJGKJ",
-        "userId": 3
+        "userId": 1
     },
     "isAvailableUsername": {
         "valid": "true"
