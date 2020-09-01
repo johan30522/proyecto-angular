@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService
       .login(this.credentials)
       .then(() => {
-        this.router.navigateByUrl('/oportunities');
+        this.router.navigateByUrl('/oportunities/open');
       })
       .catch((error) => {
         console.log('entra error');

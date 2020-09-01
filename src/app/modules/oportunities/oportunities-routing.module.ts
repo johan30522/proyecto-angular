@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OportunitiesListComponent } from './oportunities-list/oportunities-list.component';
 import { OportunitiesDetailComponent } from './oportunities-detail/oportunities-detail.component';
+import { AuthGuard } from '../../core/guards/auth.guard';
+import { PermissionGuard } from '../../core/guards/permission.guard';
+
 
 const routes: Routes =  [
   {
-    path: '',
+    path: ':status',
     component: OportunitiesListComponent,
   },
   {
@@ -13,7 +16,13 @@ const routes: Routes =  [
     component: OportunitiesDetailComponent,
   },
   {
-    path: 'new',
+    path: 'details/new',
+    component: OportunitiesDetailComponent,
+  },
+  {
+    path: 'details/closed',
+    canLoad: [AuthGuard,PermissionGuard],
+    data: { roleNeeded: 'Admin' },
     component: OportunitiesDetailComponent,
   }
 

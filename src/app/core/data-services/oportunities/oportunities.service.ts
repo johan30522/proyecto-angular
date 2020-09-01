@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CONFIG } from 'src/app/config';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { timeout } from 'rxjs/operators';
 import { Oportunity } from '../../../shared/models/oportunity';
@@ -18,6 +18,13 @@ export class OportunitiesService {
   public getOportunities(): Observable<any> {
     return this.http
       .get(`${this.apiPath}`)
+      .pipe(timeout(CONFIG.timeoutRequest));
+  }
+  public getOportunitiesByStatus(status:string): Observable<any> {
+    let params: HttpParams = new HttpParams();
+    params.set('status', status);
+    return this.http
+      .get(`${this.apiPath}`,{params:params})
       .pipe(timeout(CONFIG.timeoutRequest));
   }
   public getOportunity(OportunityId: number): Observable<any> {

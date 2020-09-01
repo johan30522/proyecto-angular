@@ -7,6 +7,13 @@ import { Job } from '../../../shared/models/jobs.model';
 import { JobsService } from '../../../core/data-services/jobs/jobs.service';
 import { ToastrService } from 'ngx-toastr';
 import { faDoorOpen, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { PermissionsService } from '../../../core/services/permissions/permissions.service';
+import { EnrollmentOpportunityService } from '../../../core/data-services/enrollments/enrollment-opportunity.service';
+import { Enroll_Opportunity } from '../../../shared/models/enrollment.opportunity.model';
+import { UserProfile } from '../../../shared/models/user.profile.model';
+import { AbstractForm } from '../../../shared/components/abstract/abstract-form';
+
+
 
 
 @Component({
@@ -14,15 +21,16 @@ import { faDoorOpen, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons
   templateUrl: './oportunities-detail.component.html',
   styleUrls: ['./oportunities-detail.component.scss']
 })
-export class OportunitiesDetailComponent implements OnInit {
+export class OportunitiesDetailComponent extends AbstractForm implements OnInit {
   public errorMsg: string = '';
   public submitted: boolean;
   public oportunity: Oportunity;
   private isEditMode: boolean;
   public listJobs: Job[];
+  public listEnrollments:UserProfile[];
 
-  public form: FormGroup;
-
+  
+  public active = 1;
   faDorOpen = faDoorOpen;
 
   faarrow = faArrowCircleLeft;
@@ -31,18 +39,23 @@ export class OportunitiesDetailComponent implements OnInit {
     private readonly activatedRoute: ActivatedRoute,
     private readonly opportunitiesService: OportunitiesService,
     private readonly jobService: JobsService,
+    private readonly enrollmentOpportunityService:EnrollmentOpportunityService,
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private readonly router: Router
+    private readonly router: Router,
+    public permissionsService: PermissionsService
+ 
 
-  ) { }
+  ) {
+    super(formBuilder)
+   }
 
   ngOnInit(): void {
     this.getOportunityID();
     this.initForm();
 
   }
-  private initForm(): void {
+  protected initForm(): void {
     this.form = this.formBuilder.group({
       title: [null, [Validators.required]],
       creationDate: [null, [Validators.required]],
@@ -55,11 +68,8 @@ export class OportunitiesDetailComponent implements OnInit {
     this.loadJobs();
   }
   private patchValueForm(): void {
-    console.log('patchValue');
-    console.log(this.oportunity);
     this.form.patchValue(this.oportunity);
     this.form.patchValue({ job: this.oportunity.job.id.toString() });
-
   }
 
   public getOportunityID(): void {
@@ -73,6 +83,7 @@ export class OportunitiesDetailComponent implements OnInit {
     } else {
       this.isEditMode = true;
       this.getOportunityDetail(oppId);
+      this.loadEnrollments(oppId);
     }
 
   }
@@ -95,32 +106,54 @@ export class OportunitiesDetailComponent implements OnInit {
       }
     );
   }
+  private loadEnrollments(oppId:number): void {
+    this.enrollmentOpportunityService.getEnrollmentOpp(oppId).subscribe(
+      (result) => {
+        this.listEnrollments = result.user;
+        console.log(this.listEnrollments);
+      }
+    );
+  }
   public save() {
+    this.submitAttempt = true;
     console.log('submited form');
     this.submitted = true;
     this.errorMsg = '';
     if (!this.form.valid) {
+      console.log('no pasa validacion');
       return;
     }
     let oppEdit: Oportunity;
     let job: Job;
+    console.log(this.form.value);
+
+
 
     this.jobService.getJob(this.form.value.job).subscribe((result) => {
       job = result;
       oppEdit = this.form.value
-      oppEdit.id = this.oportunity.id;
+      oppEdit.job=job;
+      
       if (this.isEditMode) {
+     
+        oppEdit.id = this.oportunity.id;
         this.opportunitiesService.editOportunuity(oppEdit).subscribe(
           () => {
             this.toastr.success('Opportunity Updated');
-            this.router.navigateByUrl('/oportunities');
+            this.router.navigateByUrl('/oportunities/open');
+          },
+          (error) => {
+            this.toastr.error(error);
           }
         )
       } else {
         this.opportunitiesService.createOportunity(oppEdit).subscribe(
           () => {
             this.toastr.success('Opportunity Created');
-            this.router.navigateByUrl('/oportunities');
+            this.router.navigateByUrl('/oportunities/open');
+          },
+          (error) => {
+            this.toastr.error(error);
           }
         )
       }

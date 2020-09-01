@@ -1,406 +1,591 @@
 {
-  "courses": [
-    {
-      "id": 1,
-      "title": "Angular Course",
-      "author": "Diego Arce"
-    },
-    {
-      "id": 2,
-      "title": "Web Fundamentals",
-      "author": "Juan Perez"
-    },
-    {
-      "id": 3,
-      "title": "Json Server",
-      "author": "Pedro Picapiedra"
-    }
-  ],
-  "students": [
-    {
-      "id": 1,
-      "firstname": "Diego Test",
-      "lastname": "Arce",
-      "age": 29,
-      "address": "San José",
-      "active": true
-    },
-    {
-      "id": 2,
-      "firstname": "Juan",
-      "lastname": "Valverde",
-      "age": 40,
-      "address": "Pavas",
-      "active": true
-    },
-    {
-      "id": 3,
-      "firstname": "Diego 3",
-      "lastname": "Mora",
-      "age": 50,
-      "address": "Rohrmoser",
-      "active": true
-    }
-  ],
-  "departments": [
-    {
-      "id": 1,
-      "name": "IT",
-      "jobs": [
-        {
-          "id": 1,
-          "name": "Software Specialist"
-        },
-        {
-          "id": 2,
-          "name": "QA Engineer"
-        },
-        {
-          "id": 3,
-          "name": "Developer"
-        },
-        {
-          "id": 4,
-          "name": "IT Chief"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Recursos Humanos",
-      "jobs": [
-        {
-          "id": 1,
-          "name": "Entrevistador"
-        },
-        {
-          "id": 2,
-          "name": "RH Specialist"
-        }
-      ]
-    },
-    {
-      "name": "test01",
-      "id": 3
-    },
-    {
-      "name": "test02",
-      "id": 4
-    },
-    {
-      "name": "test04",
-      "id": 5
-    }
-  ],
-  "jobs": [
-    {
-      "id": 1,
-      "name": "Software Specialist111",
-      "department": {
-        "id": 1,
-        "name": "IT"
-      }
-    },
-    {
-      "id": 2,
-      "name": "QA Engineer",
-      "department": {
-        "id": 1,
-        "name": "IT"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Developer",
-      "department": {
-        "id": 1,
-        "name": "IT"
-      }
-    },
-    {
-      "id": 4,
-      "name": "IT Chief",
-      "department": {
-        "id": 1,
-        "name": "IT"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Human Capital Analist",
-      "department": {
-        "id": 2,
-        "name": "Human Capital"
-      }
-    },
-    {
-      "id": 6,
-      "name": "Human Capital Specialis",
-      "department": {
-        "id": 2,
-        "name": "Human Capital"
-      }
-    },
-    {
-      "id": 7,
-      "name": "Accounting Client",
-      "department": {
-        "id": 3,
-        "name": "Accounting"
-      }
-    },
-    {
-      "id": 8,
-      "name": "Accounting Manager",
-      "department": {
-        "id": 3,
-        "name": "Accounting"
-      }
-    },
-    {
-      "id": 9,
-      "name": "Accounting Specialist",
-      "department": {
-        "id": 3,
-        "name": "Accounting"
-      }
-    },
-    {
-      "name": "course test",
-      "department": {
-        "name": "test01",
-        "id": 3
-      },
-      "id": 11
-    },
-    {
-      "name": "Database Administrator",
-      "department": {
-        "id": 1,
-        "name": "IT",
-        "jobs": [
-          {
+    "courses": [{
             "id": 1,
-            "name": "Software Specialist"
-          },
-          {
+            "title": "Angular Course",
+            "author": "Diego Arce"
+        },
+        {
             "id": 2,
-            "name": "QA Engineer"
-          },
-          {
+            "title": "Web Fundamentals",
+            "author": "Juan Perez"
+        },
+        {
             "id": 3,
-            "name": "Developer"
-          },
-          {
+            "title": "Json Server",
+            "author": "Pedro Picapiedra"
+        }
+    ],
+    "students": [{
+            "id": 1,
+            "firstname": "Diego Test",
+            "lastname": "Arce",
+            "age": 29,
+            "address": "San José",
+            "active": true
+        },
+        {
+            "id": 2,
+            "firstname": "Juan",
+            "lastname": "Valverde",
+            "age": 40,
+            "address": "Pavas",
+            "active": true
+        },
+        {
+            "id": 3,
+            "firstname": "Diego 3",
+            "lastname": "Mora",
+            "age": 50,
+            "address": "Rohrmoser",
+            "active": true
+        }
+    ],
+    "departments": [{
+            "id": 1,
+            "name": "IT",
+            "jobs": [{
+                    "id": 1,
+                    "name": "Software Specialist"
+                },
+                {
+                    "id": 2,
+                    "name": "QA Engineer"
+                },
+                {
+                    "id": 3,
+                    "name": "Developer"
+                },
+                {
+                    "id": 4,
+                    "name": "IT Chief"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Recursos Humanos",
+            "jobs": [{
+                    "id": 1,
+                    "name": "Entrevistador"
+                },
+                {
+                    "id": 2,
+                    "name": "RH Specialist"
+                }
+            ]
+        },
+        {
+            "name": "test01",
+            "id": 3
+        },
+        {
+            "name": "test09999",
+            "id": 4
+        },
+        {
+            "name": "test04",
+            "id": 5
+        }
+    ],
+    "jobs": [{
+            "name": "Software Specialist9999999",
+            "department": {
+                "id": 1,
+                "name": "IT",
+                "jobs": [{
+                        "id": 1,
+                        "name": "Software Specialist"
+                    },
+                    {
+                        "id": 2,
+                        "name": "QA Engineer"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Developer"
+                    },
+                    {
+                        "id": 4,
+                        "name": "IT Chief"
+                    }
+                ]
+            },
+            "id": 1
+        },
+        {
+            "id": 2,
+            "name": "QA Engineer",
+            "department": {
+                "id": 1,
+                "name": "IT"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Developer",
+            "department": {
+                "id": 1,
+                "name": "IT"
+            }
+        },
+        {
             "id": 4,
-            "name": "IT Chief"
-          }
+            "name": "IT Chief",
+            "department": {
+                "id": 1,
+                "name": "IT"
+            }
+        },
+        {
+            "id": 5,
+            "name": "Human Capital Analist",
+            "department": {
+                "id": 2,
+                "name": "Human Capital"
+            }
+        },
+        {
+            "id": 6,
+            "name": "Human Capital Specialis",
+            "department": {
+                "id": 2,
+                "name": "Human Capital"
+            }
+        },
+        {
+            "id": 7,
+            "name": "Accounting Client",
+            "department": {
+                "id": 3,
+                "name": "Accounting"
+            }
+        },
+        {
+            "id": 8,
+            "name": "Accounting Manager",
+            "department": {
+                "id": 3,
+                "name": "Accounting"
+            }
+        },
+        {
+            "id": 9,
+            "name": "Accounting Specialist",
+            "department": {
+                "id": 3,
+                "name": "Accounting"
+            }
+        },
+        {
+            "name": "course test",
+            "department": {
+                "name": "test01",
+                "id": 3
+            },
+            "id": 11
+        },
+        {
+            "name": "Database Administrator",
+            "department": {
+                "id": 1,
+                "name": "IT",
+                "jobs": [{
+                        "id": 1,
+                        "name": "Software Specialist"
+                    },
+                    {
+                        "id": 2,
+                        "name": "QA Engineer"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Developer"
+                    },
+                    {
+                        "id": 4,
+                        "name": "IT Chief"
+                    }
+                ]
+            },
+            "id": 12
+        }
+    ],
+    "oportunities": [{
+            "id": 1,
+            "title": "Encargado de analisis y Mantenimiento a servicios y Soporte a Aplicaciones Gestionadas en As400 y Sql Server",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en Base de Datos Oracle, Scripting, Servicios, Maquinas Virtuales",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist"
+            },
+            "status": "Closed"
+        },
+        {
+            "id": 2,
+            "title": "Encargado de Servicios MQ",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist"
+            },
+            "status": "Open"
+        },
+        {
+            "title": "Encargado de Servicios MQ3",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": "1",
+            "id": 3,
+            "status": "Open"
+        },
+        {
+            "id": 4,
+            "title": "Encargado de Servicios MQ4",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist"
+            },
+            "status": "Closed"
+        },
+        {
+            "id": 5,
+            "title": "Encargado de Servicios MQ5",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist"
+            },
+            "status": "Open"
+        },
+        {
+            "id": 6,
+            "title": "Encargado de Servicios M6",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist"
+            },
+            "status": "Open"
+        },
+        {
+            "id": 7,
+            "title": "Encargado de Servicios M7",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist",
+                "department": {
+                    "id": 1,
+                    "name": "IT"
+                }
+            },
+            "status": "Open"
+        },
+        {
+            "id": 8,
+            "title": "Encargado de Servicios MQ8",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist",
+                "department": {
+                    "id": 1,
+                    "name": "IT"
+                }
+            },
+            "status": "Open"
+        },
+        {
+            "id": 9,
+            "title": "Encargado de Servicios M9",
+            "creationDate": "2020-07-29T16:00:00Z",
+            "dueDate": "2020-07-29T16:00:00Z",
+            "requiredSkills": "Conocimiento en WAS MQ",
+            "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+            "job": {
+                "id": 1,
+                "name": "Software Specialist",
+                "department": {
+                    "id": 1,
+                    "name": "IT"
+                }
+            },
+            "status": "Open"
+        },
+        {
+            "title": "345345",
+            "creationDate": "345345",
+            "dueDate": "345345",
+            "requiredSkills": "345345",
+            "consideredSkills": "345345",
+            "job": {
+                "id": 5,
+                "name": "Human Capital Analist",
+                "department": {
+                    "id": 2,
+                    "name": "Human Capital"
+                }
+            },
+            "id": 10,
+            "status": "Closed"
+        },
+        {
+            "title": "aaaaaaaa",
+            "creationDate": "2020-08-28",
+            "dueDate": "2020-08-20",
+            "requiredSkills": "aaaaa",
+            "consideredSkills": "aaaaa",
+            "job": "2",
+            "id": 11
+        },
+        {
+            "title": "bbbbb",
+            "creationDate": "2020-08-20",
+            "dueDate": "2020-08-30",
+            "requiredSkills": "bbbb",
+            "consideredSkills": "bbb",
+            "job": {
+                "id": 4,
+                "name": "IT Chief",
+                "department": {
+                    "id": 1,
+                    "name": "IT"
+                }
+            },
+            "id": 12
+        }
+    ],
+    "users": [{
+            "email": "jjoharr@gmail.com",
+            "username": "johan ",
+            "txtPassword": "123",
+            "txtConfirmPassword": "123",
+            "id": 2
+        },
+        {
+            "email": "admin@gmail.com",
+            "username": "admin",
+            "password": "111",
+            "uiConfirmPassword": "111",
+            "role": "Admin",
+            "id": 1
+        },
+        {
+            "email": "juan@gmail.com",
+            "username": "juan",
+            "password": "123",
+            "uiConfirmPassword": "123",
+            "role": "user",
+            "id": 3
+        },
+        {
+            "email": "pedro@gmail.com",
+            "username": "pedro",
+            "password": "111",
+            "uiConfirmPassword": "111",
+            "role": "user",
+            "id": 4
+        },
+        {
+            "email": "ccoto@gmail.com",
+            "username": "ccoto",
+            "password": "111",
+            "uiConfirmPassword": "111",
+            "role": "user",
+            "id": 5
+        },
+        {
+            "email": "123",
+            "username": "132",
+            "password": "222",
+            "uiConfirmPassword": "222",
+            "role": "user",
+            "id": 6
+        }
+    ],
+    "login": {
+        "token": "858GFKHGKHJKJGHLKHJGKJ",
+        "userId": 3
+    },
+    "isAvailableUsername": {
+        "valid": "true"
+    },
+    "isAvailableEmail": {
+        "valid": "true"
+    },
+    "userProfile": [{
+            "id": 1,
+            "idUser": 1,
+            "name": "Johan",
+            "lastname": "Arroyo Porras",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "88891748",
+            "user": {
+                "email": "admin@gmail.com",
+                "username": "admin",
+                "role": "Admin",
+                "id": 1
+            }
+        },
+        {
+            "id": 3,
+            "idUser": 3,
+            "name": "Juan",
+            "lastname": "Peres Molina",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "88891748",
+            "user": {
+                "email": "juan@gmail.com",
+                "username": "juan",
+                "role": "user",
+                "id": 3
+            }
+        },
+        {
+            "id": 2,
+            "idUser": 2,
+            "name": "aaaaa",
+            "lastname": "aaaaaa",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "4444444",
+            "user": {
+                "email": "aaa@gmail.com",
+                "username": "aaa",
+                "role": "user",
+                "id": 2
+            }
+        },
+        {
+            "id": 4,
+            "idUser": 4,
+            "name": "bbbbbb",
+            "lastname": "bbbbbbbbbb",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "55555",
+            "user": {
+                "email": "bbb@gmail.com",
+                "username": "aaa",
+                "role": "user",
+                "id": 4
+            }
+        },
+        {
+            "id": 6,
+            "idUser": 6,
+            "name": "66666",
+            "lastname": "66666",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "66666",
+            "user": {
+                "email": "66666@gmail.com",
+                "username": "66",
+                "role": "user",
+                "id": 6
+            }
+        },
+        {
+            "id": 7,
+            "idUser": 7,
+            "name": "77777",
+            "lastname": "7777",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "777",
+            "user": {
+                "email": "7777@gmail.com",
+                "username": "7777",
+                "role": "user",
+                "id": 7
+            }
+        },
+        {
+            "id": 5,
+            "idUser": 5,
+            "name": "55555",
+            "lastname": "5555",
+            "birthDate": "1990-07-29T16:00:00Z",
+            "telephone": "5555",
+            "user": {
+                "email": "5555@gmail.com",
+                "username": "55555",
+                "role": "user",
+                "id": 5
+            }
+        }
+    ],
+    "enrollmentOpportunity": [{
+        "id": 1,
+        "idOpp": 1,
+        "user": [{
+                "id": 1,
+                "idUser": 1,
+                "name": "Johan",
+                "lastname": "Arroyo Porras",
+                "birthDate": "1990-07-29T16:00:00Z",
+                "telephone": "88891748"
+            },
+            {
+                "id": 3,
+                "idUser": 3,
+                "name": "Juan",
+                "lastname": "Peres Molina",
+                "birthDate": "1990-07-29T16:00:00Z",
+                "telephone": "88891748"
+            }
         ]
-      },
-      "id": 12
-    }
-  ],
-  "oportunities": [
-    {
-      "id": 1,
-      "title": "Encargado de analisis y Mantenimiento a servicios y Soporte a Aplicaciones Gestionadas en As400 y Sql Server",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en Base de Datos Oracle, Scripting, Servicios, Maquinas Virtuales",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
+    }],
+    "enrollmentUser": [{
         "id": 1,
-        "name": "Software Specialist"
-      },
-      "status": "Closed"
-    },
-    {
-      "id": 2,
-      "title": "Encargado de Servicios MQ",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist"
-      },
-      "status": "Closed"
-    },
-    {
-      "title": "Encargado de Servicios MQ3",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": "1",
-      "id": 3
-    },
-    {
-      "id": 4,
-      "title": "Encargado de Servicios MQ4",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist"
-      },
-      "status": "Closed"
-    },
-    {
-      "id": 5,
-      "title": "Encargado de Servicios MQ5",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist"
-      },
-      "status": "Open"
-    },
-    {
-      "id": 6,
-      "title": "Encargado de Servicios M6",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist"
-      },
-      "status": "Open"
-    },
-    {
-      "id": 7,
-      "title": "Encargado de Servicios M7",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist",
-        "department": {
-          "id": 1,
-          "name": "IT"
-        }
-      },
-      "status": "Open"
-    },
-    {
-      "id": 8,
-      "title": "Encargado de Servicios MQ8",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist",
-        "department": {
-          "id": 1,
-          "name": "IT"
-        }
-      },
-      "status": "Open"
-    },
-    {
-      "id": 9,
-      "title": "Encargado de Servicios M9",
-      "creationDate": "2020-07-29T16:00:00Z",
-      "dueDate": "2020-07-29T16:00:00Z",
-      "requiredSkills": "Conocimiento en WAS MQ",
-      "consideredSkills": "Conocimiento en lenguaje de programacion Java",
-      "job": {
-        "id": 1,
-        "name": "Software Specialist",
-        "department": {
-          "id": 1,
-          "name": "IT"
-        }
-      },
-      "status": "Open"
-    },
-    {
-      "title": "345345",
-      "creationDate": "345345",
-      "dueDate": "345345",
-      "requiredSkills": "345345",
-      "consideredSkills": "345345",
-      "job": {
-        "id": 5,
-        "name": "Human Capital Analist",
-        "department": {
-          "id": 2,
-          "name": "Human Capital"
-        }
-      },
-      "id": 10,
-      "status": "Closed"
-    }
-  ],
-  "users": [
-    {
-      "email": "jjoharr@gmail.com",
-      "username": "johan ",
-      "txtPassword": "123",
-      "txtConfirmPassword": "123",
-      "id": 2
-    },
-    {
-      "email": "admin@gmail.com",
-      "username": "admin",
-      "password": "111",
-      "uiConfirmPassword": "111",
-      "role": "Admin",
-      "id": 1
-    },
-    {
-      "email": "juan@gmail.com",
-      "username": "juan",
-      "password": "123",
-      "uiConfirmPassword": "123",
-      "role": "user",
-      "id": 3
-    },
-    {
-      "email": "pedro@gmail.com",
-      "username": "pedro",
-      "password": "111",
-      "uiConfirmPassword": "111",
-      "role": "user",
-      "id": 4
-    },
-    {
-      "email": "ccoto@gmail.com",
-      "username": "ccoto",
-      "password": "111",
-      "uiConfirmPassword": "111",
-      "role": "user",
-      "id": 5
-    },
-    {
-      "email": "123",
-      "username": "132",
-      "password": "222",
-      "uiConfirmPassword": "222",
-      "role": "user",
-      "id": 6
-    }
-  ],
-  "login": {
-    "token": "858GFKHGKHJKJGHLKHJGKJ",
-    "userId": 1
-  },
-  "isAvailableUsername": {
-    "valid": "true"
-  },
-  "isAvailableEmail": {
-    "valid": "true"
-  }
+        "idUser": 1,
+        "aportunity": [{
+                "id": 1,
+                "title": "Encargado de analisis y Mantenimiento a servicios y Soporte a Aplicaciones Gestionadas en As400 y Sql Server",
+                "creationDate": "2020-07-29T16:00:00Z",
+                "dueDate": "2020-07-29T16:00:00Z",
+                "requiredSkills": "Conocimiento en Base de Datos Oracle, Scripting, Servicios, Maquinas Virtuales",
+                "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+                "job": {
+                    "id": 1,
+                    "name": "Software Specialist"
+                },
+                "status": "Closed"
+            },
+            {
+                "id": 2,
+                "title": "Encargado de Servicios MQ",
+                "creationDate": "2020-07-29T16:00:00Z",
+                "dueDate": "2020-07-29T16:00:00Z",
+                "requiredSkills": "Conocimiento en WAS MQ",
+                "consideredSkills": "Conocimiento en lenguaje de programacion Java",
+                "job": {
+                    "id": 1,
+                    "name": "Software Specialist"
+                },
+                "status": "Open"
+            }
+        ]
+    }]
 }

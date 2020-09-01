@@ -1,1 +1,100 @@
-<p>user-detail works!</p>
+<ng-container>
+
+    <div class="container-fluid">
+
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>{{ "USERPROFILE.CV_LABEL" | translate }}</a>
+                <ng-template ngbNavContent>
+                    <div class="row justify-content-center">
+                        <div class="card w-50">
+                            <div class="card-body text-dark">
+                                <form [formGroup]="form" (submit)="save()">
+                                    <div class="form-group">
+                                        <div class="card-header bg-secondary text-light">
+                                            <h6 class="card-title">{{ "USERPROFILE.TITLEFORM" | translate }}</h6>
+                                        </div>
+                                        <br>
+                                        <h6 class="card-subtitle">{{ "USERPROFILE.NAME" | translate }}:</h6>
+
+                                        <p class="card-text">
+                                            <input type="text" [readOnly]="!isEditUser" class="form-control" name="name" id="name" formControlName="name" [ngClass]="{ 'is-invalid': !isFieldValid('name') }" />
+                                        </p>
+                                        <p class="error" *ngIf="!isFieldValid('name')">
+                                            {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                                        </p>
+                                        <h6 class="card-subtitle">{{ "USERPROFILE.LASTNAME" | translate }}:</h6>
+                                        <p class="card-text">
+                                            <input type="text" [readOnly]="!isEditUser" class="form-control" name="lastname" id="lastname" formControlName="lastname" [ngClass]="{ 'is-invalid': !isFieldValid('lastname') }" />
+                                        </p>
+                                        <p class="error" *ngIf="!isFieldValid('lastname')">
+                                            {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                                        </p>
+                                        <h6 class="card-subtitle">{{ "USERPROFILE.BIRTHDAY" | translate }}:</h6>
+                                        <div class="form-group col-xs-5 col-lg-4">
+                                            <div class="input-group">
+                                                <input class="form-control" [readOnly]="!isEditUser" placeholder="MM/DD/YYYY" name="birthDate" formControlName="birthDate" ngbDatepicker #birthDate="ngbDatepicker" [ngClass]="{ 'is-invalid': !isFieldValid('birthDate') }">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary calendar" (click)="birthDate.toggle()" type="button">
+                                        <fa-icon [icon]="faCalendar"></fa-icon> 
+                                        </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="error" *ngIf="!isFieldValid('birthDate')">
+                                            {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                                        </p>
+                                        <h6 class="card-subtitle">{{ "USERPROFILE.TELEPHONE" | translate }}:</h6>
+                                        <p class="card-text">
+                                            <input type="text" [readOnly]="!isEditUser" class="form-control" name="telephone" id="telephone" formControlName="telephone" [ngClass]="{ 'is-invalid': !isFieldValid('telephone') }" />
+                                        </p>
+                                        <p class="error" *ngIf="!isFieldValid('telephone')">
+                                            {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                                        </p>
+                                        <h6 class="card-subtitle">{{ "USERPROFILE.CV" | translate }}:</h6>
+
+
+
+                                        <div class="form-group">
+                                            <input type="file" [readOnly]="!isEditUser" class="form-control-file" id="exampleFormControlFile1">
+                                        </div>
+
+                                        <br>
+                                        <br>
+                                        <div class="form-group">
+                                            <button type="button" (click)="goback()" class="btn btn-primary mr-1"><fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}</button>
+                                            <button type="submit" *ngIf="isEditUser" class="btn btn-primary">{{ "GENERAL.SAVE_BUTTON" | translate }}</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <a ngbNavLink>{{ "USERPROFILE.ENROLLMENT_LABEL" | translate }}</a>
+                <ng-template ngbNavContent>
+                    <div class="row justify-content-center">
+                        <div class="card w-50">
+                            <div class="card-body text-dark">
+                                <button type="button" [routerLink]="['/oportunities/open']" class="btn btn-primary mr-1"><fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+
+
+    </div>
+
+</ng-container>

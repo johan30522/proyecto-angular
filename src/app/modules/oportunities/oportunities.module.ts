@@ -7,6 +7,7 @@ import { OportunitiesDetailComponent } from './oportunities-detail/oportunities-
 import { SharedModule } from '../../shared/shared.module';
 
 
+
 @NgModule({
   declarations: [OportunitiesListComponent, OportunitiesDetailComponent],
   imports: [

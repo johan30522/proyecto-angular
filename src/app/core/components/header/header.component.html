@@ -10,13 +10,17 @@
                 <div class="col-sm-12">
                     <ul class="social-network">
                         <li *ngIf="isLoggedIn">
-                            <a class="waves-effect waves-dark" href="#"> {{userName}}
-                                <fa-icon [icon]="fauser"></fa-icon>
-                            </a>
-                            <div class="col-sm-2 col-xl-1 text-right">
-                                <button type="button" class="btn btn-outline-light" (click)="logout()"><fa-icon [icon]="faLogout"></fa-icon></button>
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>{{userName}} <fa-icon [icon]="fauser"></fa-icon></button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+                                    <button type="button" ngbDropdownItem (click)="logout()">Logout <fa-icon [icon]="faLogout"></fa-icon></button>
+                                    <a class="nav-link" [routerLink]="['/user/' + user.id]">{{ "HEADER.EDITCV" | translate }}  <fa-icon [icon]="faupload"></fa-icon></a>
+                                </div>
                             </div>
+
                         </li>
+
                     </ul>
                 </div>
 
@@ -31,19 +35,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive" *ngIf="isLoggedIn">
 
-                <ul class="navbar-nav ml-auto" *ngIf="permissionsService.hasRole('Admin')">
+                <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/oportunities']">{{ "HEADER.OPEN_OPPS" | translate }}</a>
+                        <a class="nav-link" [routerLink]="['/oportunities/open']">{{ "HEADER.OPEN_OPPS" | translate }}</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/oportunities']">{{ "HEADER.CLOSED_OPPS" | translate }}</a>
+                    <li class="nav-item" *ngIf="permissionsService.hasRole('Admin')">
+                        <a class="nav-link" [routerLink]="['/oportunities/closed']">{{ "HEADER.CLOSED_OPPS" | translate }}</a>
                     </li>
 
                 </ul>
 
-                <div ngbDropdown class="d-inline-block">
+                <div ngbDropdown class="d-inline-block" *ngIf="permissionsService.hasRole('Admin')">
                     <button class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>{{ "HEADER.CATALOGS" | translate }}</button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button [routerLink]="['/departments']" ngbDropdownItem>{{ "HEADER.DEPARTMENTS" | translate }}</button>

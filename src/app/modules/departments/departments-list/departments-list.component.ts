@@ -47,4 +47,16 @@ export class DepartmentsListComponent implements OnInit {
     });
 
   }
+  public editDepto(depto: Department): void {
+    const modalRef = this.modalService.open(DepartmentModalComponent, {
+      size: 'md',
+      centered: true,
+    });
+
+    modalRef.componentInstance.department = depto;
+
+    modalRef.componentInstance.successfulTransaction.subscribe(() => {
+      this.loadDeptos();
+    });
+  }
 }

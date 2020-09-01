@@ -1,62 +1,110 @@
-test
 <ng-container>
 
     <div class="container-fluid">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>{{ "OPPORTUNITY.OPPORTUNITY_LABEL" | translate }}</a>
+                <ng-template ngbNavContent>
+                    <div class="row justify-content-center">
 
-        <div class="row justify-content-center">
+                        <div class="card w-50">
+                            <div class="card-body text-dark">
+                                <form [formGroup]="form" (submit)="save()" *ngIf="permissionsService.hasRole('Admin')">
+                                    <div class="form-group">
+                                        <div class="card-header bg-secondary text-light">
+                                            <h6 class="card-title">{{ "OPPORTUNITY.EDITOPP_TITTLE" | translate }}</h6>
+                                        </div>
+                                        <br>
+                                        <h6 class="card-subtitle">{{ "OPPORTUNITY.TITTLE_LABEL" | translate }}:</h6>
+                                        <p class="card-text">
+                                            <input type="text" class="form-control" name="title" id="title" formControlName="title" [ngClass]="{ 'is-invalid': !isFieldValid('title') }" />
+                                            <label class="error" *ngIf="!isFieldValid('title')">
+                                                {{ "GENERAL.VALIDATE_FIELD" | translate }}</label>
+                                        </p>
 
-            <div class="card w-50">
-                <div class="card-body text-dark">
-                    <form [formGroup]="form" (submit)="save()">
-                        <div class="form-group">
-                            <div class="card-header bg-secondary text-light">
-                                <h6 class="card-title">{{ "OPPORTUNITY.EDITOPP_TITTLE" | translate }}</h6>
+                                        <h6 class="card-subtitle">{{ "OPPORTUNITY.CREATIONDATEO_LABEL" | translate }}:
+                                        </h6>
+                                        <div class="form-group col-xs-5 col-lg-4">
+                                            <div class="input-group">
+                                                <input class="form-control" placeholder="MM/DD/YYYY" name="creationDate" formControlName="creationDate" ngbDatepicker #creationDate="ngbDatepicker" [ngClass]="{ 'is-invalid': !isFieldValid('creationDate') }">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary calendar" (click)="creationDate.toggle()" type="button">
+                                                        <fa-icon [icon]="faarrow"></fa-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <p class="error" *ngIf="!isFieldValid('creationDate')">
+                                                {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                                            </p>
+                                        </div>
+                                        <h6 class="card-subtitle">{{ "OPPORTUNITY.DUEDATE_LABEL" | translate }}:</h6>
+
+                                        <div class="form-group col-xs-5 col-lg-4">
+                                            <div class="input-group">
+                                                <input class="form-control" placeholder="MM/DD/YYYY" name="dueDate" formControlName="dueDate" ngbDatepicker #dueDate="ngbDatepicker" [ngClass]="{ 'is-invalid': !isFieldValid('dueDate') }">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary calendar" (click)="dueDate.toggle()" type="button">
+                                                        <fa-icon [icon]="faarrow"></fa-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <p class="error" *ngIf="!isFieldValid('dueDate')">
+                                                {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                                            </p>
+                                        </div>
+
+
+                                        <h6 class="card-subtitle">{{ "OPPORTUNITY.SKILLS_LABEL" | translate }}:</h6>
+                                        <p class="card-text">
+                                            <textarea class="form-control" name="requiredSkills" id="requiredSkills" formControlName="requiredSkills" [ngClass]="{ 'is-invalid': !isFieldValid('requiredSkills') }"></textarea>
+                                            <label class="error" *ngIf="!isFieldValid('requiredSkills')">
+                                                {{ "GENERAL.VALIDATE_FIELD" | translate }}</label>
+                                        </p>
+                                        <h6 class="card-subtitle">{{ "OPPORTUNITY.OTHERSKILLS_LABEL" | translate }}:
+                                        </h6>
+                                        <p class="card-text">
+                                            <textarea class="form-control" name="consideredSkills" id="consideredSkills" formControlName="consideredSkills" [ngClass]="{ 'is-invalid': !isFieldValid('consideredSkills') }"></textarea>
+                                            <label class="error" *ngIf="!isFieldValid('consideredSkills')">
+                                                {{ "GENERAL.VALIDATE_FIELD" | translate }}</label>
+                                        </p>
+
+
+                                        <h6 class="card-subtitle">{{"OPPORTUNITY.JOB_LABEL" | translate }}:</h6>
+                                        <p class="card-text">
+
+                                            <select class="form-control" name="job" id="job" formControlName="job" [ngClass]="{ 'is-invalid': !isFieldValid('job') }">
+                                                <option value="" disabled selected>select an option</option>
+                                                <option *ngFor="let job of listJobs" [value]="job.id">{{job.name}}
+                                                </option>
+                                            </select>
+                                            <label class="error" *ngIf="!isFieldValid('job')">
+                                                {{ "GENERAL.VALIDATE_FIELD" | translate }}</label>
+                                        </p>
+
+                                        <button type="button" [routerLink]="['/oportunities/open']" class="btn btn-primary mr-1">
+                                            <fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">{{ "GENERAL.SAVE_BUTTON" | translate }}</button>
+                                    </div>
+                                </form>
                             </div>
-                            <br>
-                            <h6 class="card-subtitle">{{ "OPPORTUNITY.TITTLE_LABEL" | translate }}:</h6>
-                            <p class="card-text">
-                                <input type="text" class="form-control" name="title" id="title" formControlName="title" />
-                            </p>
-                            <h6 class="card-subtitle">{{ "OPPORTUNITY.CREATIONDATEO_LABEL" | translate }}:</h6>
-                            <p class="card-text">
-                                <input type="text" class="form-control" name="creationDate" id="creationDate" formControlName="creationDate" />
-                            </p>
-                            <h6 class="card-subtitle">{{ "OPPORTUNITY.DUEDATE_LABEL" | translate }}:</h6>
-                            <p class="card-text">
-                                <input type="text" class="form-control" name="dueDate" id="dueDate" formControlName="dueDate" />
-                            </p>
-
-
-                            <h6 class="card-subtitle">{{ "OPPORTUNITY.SKILLS_LABEL" | translate }}:</h6>
-                            <p class="card-text">
-                                <textarea class="form-control" name="requiredSkills" id="requiredSkills" formControlName="requiredSkills"></textarea>
-                            </p>
-                            <h6 class="card-subtitle">{{ "OPPORTUNITY.OTHERSKILLS_LABEL" | translate }}:</h6>
-                            <p class="card-text">
-                                <textarea class="form-control" name="consideredSkills" id="consideredSkills" formControlName="consideredSkills"></textarea>
-                            </p>
-
-                            <h6 class="card-subtitle">{{"OPPORTUNITY.JOB_LABEL" | translate }}:</h6>
-                            <p class="card-text">
-
-                                <select class="form-control" name="job" id="job" formControlName="job">
-                                    <option value="" disabled selected>select an option</option>
-                                    <option *ngFor="let job of listJobs" [value]="job.id">{{job.name}}</option>
-                                  </select>
-
-                            </p>
-
-
-
-                            <button type="button" [routerLink]="['/oportunities']" class="btn btn-primary float-right mr-1"><fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}</button>
-                            <button type="submit" class="btn btn-primary">{{ "GENERAL.SAVE_BUTTON" | translate }}</button>
-
+                            <reclutamiento-opportunity-dsp [oportunity]="oportunity"></reclutamiento-opportunity-dsp>
                         </div>
-                    </form>
-                </div>
 
-            </div>
-        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2" *ngIf="permissionsService.hasRole('Admin')">
+                <a ngbNavLink>{{ "OPPORTUNITY.ENROLLMENT_LABEL" | translate }}</a>
+                <ng-template ngbNavContent>
+                    <reclutamiento-user-list [listUser]="listEnrollments"></reclutamiento-user-list>
+
+                </ng-template>
+            </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
     </div>
 
 </ng-container>

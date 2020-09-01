@@ -28,7 +28,8 @@
         "CLOSED_OPPS": "Closed Opportunities",
         "CATALOGS": "Departments",
         "DEPARTMENTS": "Departments",
-        "JOBS": "Jobs"
+        "JOBS": "Jobs",
+        "EDITCV": "Edit my CV"
     },
     "OPPORTUNITY": {
         "TITLE_OPEN": "List of Actives Opportunities",
@@ -42,14 +43,46 @@
         "JOB_LABEL": "Job",
         "DEPARTMENT_LABEL": "Department",
         "EDITOPP_TITTLE": "Edit Opportunity",
-        "STATUS_LABEL": "Status"
+        "STATUS_LABEL": "Status",
+        "OPPORTUNITY_LABEL": "Opportunity Data",
+        "ENROLLMENT_LABEL": "Enrollments"
     },
     "GENERAL": {
         "EDIT_BUTTON": "Edit",
         "DESACTIVE_BUTTON": "Change Status",
+        "CREATE_BUTTON": "New",
+        "DELETE_BUTTON": "Delete",
+        "ENROLL_BUTTON": "Apply",
+        "MORE_BUTTON": "View more",
         "NEWOPP_BUTTON": "New Opportunity",
         "DESACTIVEALL_BUTTON": "Desactive all",
         "BACK_BUTTON": "Back",
-        "SAVE_BUTTON": "Save"
+        "SAVE_BUTTON": "Save",
+        "ACTIONS_LABEL": "Actions",
+        "VALIDATE_FIELD": "This Field is Required"
+    },
+    "USERPROFILE": {
+        "TITLEFORM": "Personal Information",
+        "NAME": "Name",
+        "LASTNAME": "Lastname",
+        "BIRTHDAY": "BirthDate",
+        "TELEPHONE": "Telephone",
+        "CV": "File CV",
+        "CV_LABEL": "Curriculum",
+        "ENROLLMENT_LABEL": "Enrollments"
+    },
+    "JOB": {
+        "TITTLE": "Job Definition",
+        "NAME_LABEL": "NAME",
+        "TITTLE_LIST": "Job List",
+        "ID_LABEL": "ID",
+        "DEPARTMENT_LABEL": "Department"
+    },
+    "DEPARTMENT": {
+        "ID_LABEL": "ID",
+        "TITTLE_LIST": "List of Departments",
+        "TITTLE": "Department Definition",
+        "NAME_LABEL": "NAME",
+        "JOB_LABEL": "JOBS"
     }
 }

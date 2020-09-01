@@ -28,7 +28,8 @@
         "CLOSED_OPPS": "Oportunidades Cerradas",
         "CATALOGS": "Catalogos",
         "DEPARTMENTS": "Departamentos",
-        "JOBS": "Puestos"
+        "JOBS": "Puestos",
+        "EDITCV": "Editar mi CV"
     },
     "OPPORTUNITY": {
         "TITLE_OPEN": "Lista de Oportunidades Abiertas",
@@ -42,15 +43,47 @@
         "JOB_LABEL": "Puesto",
         "DEPARTMENT_LABEL": "Departamento",
         "EDITOPP_TITTLE": "Editar Oportunidad",
-        "STATUS_LABEL": "Status"
+        "STATUS_LABEL": "Status",
+        "OPPORTUNITY_LABEL": "Datos de la oportunidad",
+        "ENROLLMENT_LABEL": "Aplicaciones a esta Oportunidad"
     },
     "GENERAL": {
         "EDIT_BUTTON": "Editar",
+        "DELETE_BUTTON": "Eliminar",
+        "CREATE_BUTTON": "Nuevo",
+        "MORE_BUTTON": "Ver mas",
         "DESACTIVE_BUTTON": "Cambiar Estado",
         "NEWOPP_BUTTON": "Nueva Oportunidad",
+        "ENROLL_BUTTON": "Aplicar",
         "DESACTIVEALL_BUTTON": "Desactivar Todo",
         "BACK_BUTTON": "Atras",
-        "SAVE_BUTTON": "Salvar"
+        "SAVE_BUTTON": "Salvar",
+        "VALIDATE_FIELD": "El campo es requerido",
+        "ACTIONS_LABEL": "Acciones"
+    },
+    "USERPROFILE": {
+        "TITLEFORM": "DATOS PERSONALES",
+        "NAME": "Nombre",
+        "LASTNAME": "Apellidos",
+        "BIRTHDAY": "Fecha de Nacimiento",
+        "TELEPHONE": "Teléfono",
+        "CV": "Archivo de Currículo",
+        "CV_LABEL": "Curriculum",
+        "ENROLLMENT_LABEL": "Mis Aplicaciones a Oportunidades"
+    },
+    "JOB": {
+        "TITTLE": "Definición de Puesto",
+        "TITTLE_LIST": "Lista de Puestos",
+        "NAME_LABEL": "Nombre",
+        "ID_LABEL": "Identificador",
+        "DEPARTMENT_LABEL": "Departamento"
+    },
+    "DEPARTMENT": {
+        "ID_LABEL": "Identificador",
+        "TITTLE_LIST": "Lista de Departamentos",
+        "TITTLE": "Definición de Departamento",
+        "NAME_LABEL": "Nombre",
+        "JOB_LABEL": "Puestos"
     }
 
 }

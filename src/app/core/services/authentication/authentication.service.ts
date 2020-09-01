@@ -77,6 +77,7 @@ export class AuthenticationService {
     // API call for logout if exist then clean the localstorage
     this.securityService.logout();
     this.localStorageService.deleteAll();
+    this.loggedUser=null;
     this.eventsHubService.setLoggedIn(false);
     this.router.navigate(['/']);
   }

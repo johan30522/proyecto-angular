@@ -2,10 +2,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-6">
-                <h1>Department List</h1>
+                <h1>{{ "DEPARTMENT.TITTLE_LIST" | translate }}</h1>
             </div>
             <div class="col-12 col-sm-6 text-right">
-                <button type="button" class="btn btn-primary" (click)="createDepto()">Create Course</button>
+                <button type="button" class="btn btn-primary" (click)="createDepto()">{{ "GENERAL.CREATE_BUTTON" | translate }}</button>
             </div>
         </div>
 
@@ -15,10 +15,10 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Jobs</th>
-                                <th>Actions</th>
+                                <th>{{ "DEPARTMENT.ID_LABEL" | translate }}</th>
+                                <th>{{ "DEPARTMENT.NAME_LABEL" | translate }}</th>
+                                <th>{{ "DEPARTMENT.JOB_LABEL" | translate }}</th>
+                                <th>{{ "GENERAL.ACTIONS_LABEL" | translate }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,12 +37,12 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-link">Edit</button>
+                                    <button type="button" class="btn btn-link" (click)="editDepto(department)">{{ "GENERAL.EDIT_BUTTON" | translate }}</button>
                                     <button type="button" class="btn btn-link" [swal]="{
                     title: 'Are you sure you want to delete ',
                     showCancelButton: true
                   }" (confirm)="deleteDepto(department)">
-                  Delete
+                  {{ "GENERAL.DELETE_BUTTON" | translate }}
                 </button>
 
                                 </td>

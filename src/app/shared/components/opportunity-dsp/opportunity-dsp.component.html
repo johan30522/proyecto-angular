@@ -1,0 +1,44 @@
+<div *ngIf="oportunity">
+    <div class="card-body text-dark" *ngIf="permissionsService.hasRole('user')">
+
+        <div class="card-header bg-secondary text-light" style="height: 5rem;">
+            <h6 class="card-title">
+                {{ oportunity.title.substring(0,70) + ( (oportunity.title.length > 70) ? '...' : '') }}</h6>
+        </div>
+        <br>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.CODE_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{ oportunity.id }}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.CREATIONDATEO_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{ oportunity.creationDate }}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.DUEDATE_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{ oportunity.dueDate }}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.JOB_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{oportunity.job.name}}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.DEPARTMENT_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{oportunity.job?.department?.name}}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.STATUS_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{oportunity.job?.department?.name}}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.SKILLS_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{oportunity.requiredSkills}}
+        </p>
+        <h6 class="card-subtitle">{{"OPPORTUNITY.OTHERSKILLS_LABEL" | translate }}:</h6>
+        <p class="card-text">
+            {{oportunity.consideredSkills}}
+        </p>
+
+        <button type="button" [routerLink]="['/oportunities/open']" class="btn btn-primary float-right mr-1"><fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}</button>
+    </div>
+</div>

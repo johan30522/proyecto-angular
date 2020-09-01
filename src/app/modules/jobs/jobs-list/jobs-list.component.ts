@@ -47,5 +47,17 @@ export class JobsListComponent implements OnInit {
       this.loadJobs();
     });
   }
+  public editJob(job: Job): void {
+    const modalRef = this.modalService.open(JobModalComponent, {
+      size: 'md',
+      centered: true,
+    });
+
+    modalRef.componentInstance.job = job;
+
+    modalRef.componentInstance.successfulTransaction.subscribe(() => {
+      this.loadJobs();
+    });
+  }
 
 }

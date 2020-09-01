@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { OportunitiesService } from '../../../core/data-services/oportunities/oportunities.service';
 import { faFile, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { JobsService } from '../../../core/data-services/jobs/jobs.service';
+import { ActivatedRoute } from '@angular/router';
+import { PermissionsService } from '../../../core/services/permissions/permissions.service';
 
 @Component({
   selector: 'reclutamiento-oportunities-list',
@@ -15,24 +17,26 @@ export class OportunitiesListComponent implements OnInit {
   public list: Oportunity[];
   fanew = faFile;
   famulti = faCheckSquare;
+  public statusOpp:string;
 
   constructor(
+    private readonly activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private readonly oportunityService: OportunitiesService,
-    private readonly jobService: JobsService
+    private readonly jobService: JobsService,
+    public permissionsService: PermissionsService
 
   ) { }
 
   ngOnInit(): void {
-    this.getListOportunities();
-    console.log(this.list);
-  }
-
-  private loadJobs(): void {
+    this.statusOpp=this.activatedRoute.snapshot.params['status'];
+    console.log(`el estado es: ${this.statusOpp}`);
+    this.getListOportunities(this.statusOpp);
 
   }
-  private getListOportunities(): void {
-    this.oportunityService.getOportunities().subscribe(
+
+  private getListOportunities(status:string): void {
+    this.oportunityService.getOportunitiesByStatus(status).subscribe(
       (result: Oportunity[]) => {
         this.list = result;
       },
@@ -42,7 +46,7 @@ export class OportunitiesListComponent implements OnInit {
     )
   }
   public showOportunityInformation(oportunity: Oportunity): void {
-    console.log(oportunity);
+    
     let statusstr:string;
     if(oportunity.status==='Closed'){
       statusstr='Open'
@@ -50,7 +54,7 @@ export class OportunitiesListComponent implements OnInit {
       statusstr='Closed'
     }
     this.oportunityService.changeStatus(oportunity.id, statusstr).subscribe(() => {
-      this.getListOportunities();
+      this.getListOportunities(this.statusOpp);
     },
       (error) => {
         console.error(error);

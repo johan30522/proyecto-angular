@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+    <div class="card w-50">
+        <div class="card-body text-dark">
+
+
+            <div class="row justify-content-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>{{ "USERPROFILE.NAME" | translate }}</th>
+                            <th>{{ "USERPROFILE.TELEPHONE" | translate }}</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let userItem of listUser">
+                            <td>{{userItem.name + " " + userItem.lastname}}</td>
+                            <td>{{userItem.telephone}}</td>
+                            <td> <a [routerLink]="['/user/'+userItem.idUser]" class="btn btn-info float-right mr-1">{{"GENERAL.MORE_BUTTON" | translate }} <fa-icon [icon]="faDorOpen"></fa-icon></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <button type="button" [routerLink]="['/oportunities/open']" class="btn btn-primary mr-1"><fa-icon [icon]="faarrow"></fa-icon> {{ "GENERAL.BACK_BUTTON" | translate }}</button>
+        </div>
+    </div>
+</div>

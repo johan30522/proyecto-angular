@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Oportunity } from '../../models/oportunity';
-import { faPen,faArrowCircleRight} from '@fortawesome/free-solid-svg-icons';
+import { faPen,faArrowCircleRight,faDoorOpen,faCheck} from '@fortawesome/free-solid-svg-icons';
+import { EventsHubService } from '../../../core/services/events-hub/events-hub.service';
+import { PermissionsService } from '../../../core/services/permissions/permissions.service';
+import { AuthenticationService } from '../../../core/services/authentication/authentication.service';
 
 @Component({
   selector: 'reclutamiento-oportunity-card',
@@ -12,12 +15,21 @@ export class OportunityCardComponent implements OnInit {
   @Output() onOportunitySelected = new EventEmitter<Oportunity>();
   faPen=faPen;
   faDesactive=faArrowCircleRight;
-  
-  constructor() { }
+  faDoorOpen=faDoorOpen;
+  faCheck=faCheck;
+  constructor(
+    private evenstHubService: EventsHubService,
+    public permissionsService: PermissionsService,
+    private authenticationService:AuthenticationService
+  ) { }
 
   ngOnInit(): void {
   }
   public oportunitytSelect(oportunity:Oportunity):void{
+    //console.log(student);
+    this.onOportunitySelected.emit(oportunity);
+  }
+  public oportunityApply(oportunity:Oportunity):void{
     //console.log(student);
     this.onOportunitySelected.emit(oportunity);
   }

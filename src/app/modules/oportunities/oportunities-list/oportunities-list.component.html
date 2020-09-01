@@ -7,14 +7,14 @@
 
 
 
-    <div class="row justify-content-end">
+    <div class="row justify-content-end" *ngIf="permissionsService.hasRole('Admin')">
         <br>
 
         <swal #deleteSwal title="Confirma cerrar todas las oportunidades?" text="" icon="question" [showCancelButton]="true" [focusCancel]="true" (confirm)="inactiveOportunity()"></swal>
         <button class="btn btn-info mr-1" [swal]="deleteSwal">{{"GENERAL.DESACTIVEALL_BUTTON" | translate }}<fa-icon [icon]="famulti"></fa-icon></button>
 
-        <button [routerLink]="['/oportunities/new']" type="button" (click)="inactiveOportunity()" class="btn btn-info">{{"GENERAL.NEWOPP_BUTTON" | translate }} <fa-icon [icon]="fanew"></fa-icon></button>
 
+        <a [routerLink]="['/oportunities/details/new']" class="btn btn-info float-right mr-1">{{"GENERAL.NEWOPP_BUTTON" | translate }} <fa-icon [icon]="fanew"></fa-icon></a>
 
     </div>
     <br>

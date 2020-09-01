@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Create Job</h4>
+    <h4 class="modal-title" id="modal-basic-title">{{ "JOB.TITTLE" | translate }}</h4>
     <button type="button" class="close" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -10,19 +10,25 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-3">
-                        <p><label for="name">Job Name</label></p>
+                        <p><label for="name">{{ "JOB.NAME_LABEL" | translate }}</label></p>
                     </div>
                     <div class="col-9">
-                        <p><input type="text" class="form-control" name="name" id="title" formControlName="name" /> </p>
+                        <input type="text" class="form-control" name="name" id="name" formControlName="name" [ngClass]="{ 'is-invalid': !isFieldValid('name') }" />
+                        <p class="error" *ngIf="!isFieldValid('name')">
+                            {{ "GENERAL.VALIDATE_FIELD" | translate }}
+                        </p>
                     </div>
                     <div class="col-3">
-                        <p><label for="department">Department</label></p>
+                        <p><label for="department">{{ "JOB.DEPARTMENT_LABEL" | translate }}</label></p>
                     </div>
                     <div class="col-9">
-                        <p><select class="form-control" name="department" id="department" formControlName="department">
+                        <p><select class="form-control" name="department" id="department" formControlName="department" [ngClass]="{ 'is-invalid': !isFieldValid('department') }">
                             <option value="" disabled selected>select an option</option>
                             <option *ngFor="let depto of listDeptos" [value]="depto.id">{{depto.name}}</option>
                           </select>
+                        </p>
+                        <p class="error" *ngIf="!isFieldValid('department')">
+                            {{ "GENERAL.VALIDATE_FIELD" | translate }}
                         </p>
                     </div>
                 </div>
@@ -30,8 +36,8 @@
         </div>
 
         <div class="footer-actions text-right">
-            <button type="button" class="btn btn-outline-dark mr-3" (click)="closeModal()">Close</button>
-            <button type="submit" class="btn btn-primary">Create Job</button>
+            <button type="button" class="btn btn-outline-dark mr-3" (click)="closeModal()">{{ "GENERAL.BACK_BUTTON" | translate }}</button>
+            <button type="submit" class="btn btn-primary">{{ "GENERAL.SAVE_BUTTON" | translate }}</button>
         </div>
     </form>
 </div>

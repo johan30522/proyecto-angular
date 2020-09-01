@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Create Department</h4>
+    <h4 class="modal-title" id="modal-basic-title">{{ "DEPARTMENT.TITTLE" | translate }}</h4>
     <button type="button" class="close" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -7,15 +7,15 @@
 <div class="modal-body">
     <form [formGroup]="form" (submit)="createDepto()">
         <div class="form-group">
-            <label for="name">Department Name</label>
+            <label for="name">{{ "DEPARTMENT.NAME_LABEL" | translate }}</label>
             <input type="text" class="form-control" name="name" id="name" formControlName="name" [ngClass]="{ 'is-invalid': !isFieldValid('name')}" />
             <p class="error" *ngIf="!isFieldValid('name')">
-                This Field is required
+                {{ "GENERAL.VALIDATE_FIELD" | translate }}
             </p>
         </div>
         <div class="footer-actions text-right">
-            <button type="button" class="btn btn-outline-dark mr-3" (click)="closeModal()">save</button>
-            <button type="submit" class="btn btn-primary">Create Course</button>
+            <button type="button" class="btn btn-outline-dark mr-3" (click)="closeModal()">{{ "GENERAL.BACK_BUTTON" | translate }}</button>
+            <button type="submit" class="btn btn-primary">{{ "GENERAL.SAVE_BUTTON" | translate }}</button>
         </div>
     </form>
 </div>

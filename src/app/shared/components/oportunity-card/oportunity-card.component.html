@@ -33,14 +33,17 @@
                     {{oportunity.status}}
                 </p>
             </div>
-            <div class="card-footer bg-transparent border-info">
-
+            <div class="card-footer bg-transparent border-info" *ngIf="permissionsService.hasRole('Admin')">
                 <button type="button" class="btn btn-info float-right mr-1" (click)="oportunitytSelect(oportunity)">{{"GENERAL.DESACTIVE_BUTTON" | translate }}<fa-icon [icon]="faDesactive"></fa-icon></button>
 
                 <a [routerLink]="['/oportunities/details/'+oportunity.id]" class="btn btn-info float-right mr-1">{{"GENERAL.EDIT_BUTTON" | translate }} <fa-icon [icon]="faPen"></fa-icon></a>
+            </div>
+            <div class="card-footer bg-transparent border-info" *ngIf="permissionsService.hasRole('user')">
+                <swal #applyOppSwal title="Desea aplicar a la oportunidad: '{{oportunity.title}}'?" text="" icon="question" [showCancelButton]="true" [focusCancel]="true" (confirm)="oportunityApply(oportunity)"></swal>
 
+                <button type="button" class="btn btn-info float-right mr-1" [swal]="applyOppSwal">{{"GENERAL.ENROLL_BUTTON" | translate }}<fa-icon [icon]="faCheck"></fa-icon></button>
 
-
+                <a [routerLink]="['/oportunities/details/'+oportunity.id]" class="btn btn-info float-right mr-1">{{"GENERAL.MORE_BUTTON" | translate }} <fa-icon [icon]="faDoorOpen"></fa-icon></a>
             </div>
         </div>
     </div>

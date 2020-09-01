@@ -11,13 +11,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CompareDirective } from './directives/compare-directive/compare.directive';
 import { RouterModule } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-
-
+import { MomentModule } from 'ngx-moment';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { OpportunityDspComponent } from './components/opportunity-dsp/opportunity-dsp.component';
 
 
 @NgModule({
-  declarations: [BooleanTohumanPipe, AgePipe, OportunityCardComponent, CompareDirective],
+  declarations: [BooleanTohumanPipe, AgePipe, OportunityCardComponent, CompareDirective, UserListComponent, OpportunityDspComponent],
   imports: [
     CommonModule,
     SweetAlert2Module,
@@ -25,7 +25,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    MomentModule
   ],
   exports: [
     CommonModule,
@@ -34,8 +35,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     TranslateModule,
     SweetAlert2Module,
     ReactiveFormsModule,
-
+    NgbModule,
     OportunityCardComponent,
+    OpportunityDspComponent,
+    UserListComponent,
     FontAwesomeModule,
     CompareDirective
   ]

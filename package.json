@@ -29,6 +29,8 @@
         "@sweetalert2/ngx-sweetalert2": "~8.1.1",
         "bootstrap": "~4.5.0",
         "bootstrap-icons": "~1.0.0-alpha5",
+        "moment": "^2.27.0",
+        "ngx-moment": "^5.0.0",
         "ngx-toastr": "~13.0.0",
         "rxjs": "~6.5.5",
         "sweetalert2": "~9.17.1",
