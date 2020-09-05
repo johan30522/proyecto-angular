@@ -6,4 +6,6 @@ export class UserProfile {
     lastname:string;
     birthDate:Date;
     telephone:string;
+    file:String;
+    fileName=String;
 }

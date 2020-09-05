@@ -5,5 +5,7 @@ export class User {
     email: string;
     password: string;
     uiConfirmPassword: string;
-    role: String
+    role: String;
+    fileCV:string|any
+
 }

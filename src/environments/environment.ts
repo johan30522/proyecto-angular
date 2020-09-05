@@ -7,6 +7,7 @@ export const environment = {
   stripeId: '2345678',
   api: 'http://localhost:3000',
   apiAuth: 'http://localhost:3001',
+  apiUpload: 'http://localhost:3001',
   oAuthCredentials: {
     clientId: 'asdfadfa',
     secret: 'aadfadsfadfadfadf'

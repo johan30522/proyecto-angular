@@ -8,6 +8,10 @@ import { PermissionGuard } from '../../core/guards/permission.guard';
 
 const routes: Routes =  [
   {
+    path: '',
+    component: OportunitiesListComponent,
+  },
+  {
     path: ':status',
     component: OportunitiesListComponent,
   },
@@ -25,7 +29,7 @@ const routes: Routes =  [
     data: { roleNeeded: 'Admin' },
     component: OportunitiesDetailComponent,
   }
-
+ 
 
 
 ];

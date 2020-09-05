@@ -55,9 +55,14 @@
 
 
 
+
+
                                         <div class="form-group">
-                                            <input type="file" [readOnly]="!isEditUser" class="form-control-file" id="exampleFormControlFile1">
+                                            <label for="file"></label>
+                                            <input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)">
                                         </div>
+
+                                        <a href="{{urlFile}}" download="CV_File" target="_blank" *ngIf="userProfile">Descarga de CV <fa-icon [icon]="faDownload"></fa-icon></a>
 
                                         <br>
                                         <br>
