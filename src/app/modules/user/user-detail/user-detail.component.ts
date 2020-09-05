@@ -74,7 +74,6 @@ export class UserDetailComponent extends AbstractForm implements OnInit {
   private getUserProfile(): void {
     //this.user = this.authenticationService.getLoggedUser();
     const userId: number = +this.activatedRoute.snapshot.params['userId'];
-    console.log(`el id de usuario logueado es ${userId}`);
     this.userProfileService.getUserProfile(userId).subscribe((result) => {
       this.userProfile = result;
       this.patchValueForm();
@@ -83,8 +82,7 @@ export class UserDetailComponent extends AbstractForm implements OnInit {
       this.isEditUser = this.currentUser.id == this.userProfile.idUser ? true : false;
       //arma la url de descarga del archivo
       this.urlFile=`${this.apiPath}/${this.userProfile.fileName}/?${this.authenticationService.getToken()}`;
-      console.log(this.urlFile);
-      console.log(this.isEditUser);
+  
     },
 
       (error) => {

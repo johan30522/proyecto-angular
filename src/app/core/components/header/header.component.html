@@ -15,7 +15,7 @@
                                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
 
                                     <button type="button" ngbDropdownItem (click)="logout()">Logout <fa-icon [icon]="faLogout"></fa-icon></button>
-                                    <a class="nav-link" [routerLink]="['/user/' + user.id]">{{ "HEADER.EDITCV" | translate }}  <fa-icon [icon]="faupload"></fa-icon></a>
+                                    <a class="nav-link" *ngIf="permissionsService.hasRole('user')" [routerLink]="['/user/' + user.id]">{{ "HEADER.EDITCV" | translate }}  <fa-icon [icon]="faupload"></fa-icon></a>
                                 </div>
                             </div>
 
@@ -30,6 +30,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> {{ "HEADER.TITLE" | translate }}</a>
+            <img src="assets/images/NASA_logo.svg" alt="RH" width="60px" height="60px" />
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -4,6 +4,7 @@ import { JobsService } from '../../../core/data-services/jobs/jobs.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { JobModalComponent } from '../job-modal/job-modal.component';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'reclutamiento-jobs-list',
@@ -12,7 +13,8 @@ import { JobModalComponent } from '../job-modal/job-modal.component';
 })
 export class JobsListComponent implements OnInit {
   public list:Job;
-
+  faPen=faPen;
+  faTrash=faTrash;
   constructor(
     private readonly jobsService:JobsService,
     private readonly toastr:ToastrService,

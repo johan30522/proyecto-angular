@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Department } from '../../../shared/models/department.model';
 import { DepartmentModalComponent } from '../department-modal/department-modal.component';
-
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'reclutamiento-departments-list',
   templateUrl: './departments-list.component.html',
@@ -12,6 +12,8 @@ import { DepartmentModalComponent } from '../department-modal/department-modal.c
 })
 export class DepartmentsListComponent implements OnInit {
   public list: Department[];
+  faPen=faPen;
+  faTrash=faTrash;
   constructor(
     private readonly deptoService: DepartmentsService,
     private readonly toastr: ToastrService,

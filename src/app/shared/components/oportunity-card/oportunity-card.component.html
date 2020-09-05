@@ -34,7 +34,8 @@
                 </p>
             </div>
             <div class="card-footer bg-transparent border-info" *ngIf="permissionsService.hasRole('Admin')">
-                <button type="button" class="btn btn-info float-right mr-1" (click)="oportunitytSelect(oportunity)">{{"GENERAL.DESACTIVE_BUTTON" | translate }}<fa-icon [icon]="faDesactive"></fa-icon></button>
+                <swal #changeStatusSwal title="Confirma cambiar el estado a la oportunidad?" text="" icon="question" [showCancelButton]="true" [focusCancel]="true" (confirm)="oportunitytSelect(oportunity)"></swal>
+                <button type="button" class="btn btn-info float-right mr-1" [swal]="changeStatusSwal">{{"GENERAL.DESACTIVE_BUTTON" | translate }}<fa-icon [icon]="faDesactive"></fa-icon></button>
 
                 <a [routerLink]="['/oportunities/details/'+oportunity.id]" class="btn btn-info float-right mr-1">{{"GENERAL.EDIT_BUTTON" | translate }} <fa-icon [icon]="faPen"></fa-icon></a>
             </div>

@@ -13,6 +13,7 @@ import { AuthenticationService } from '../../../core/services/authentication/aut
 export class OportunityCardComponent implements OnInit {
   @Input() oportunity:Oportunity;
   @Output() onOportunitySelected = new EventEmitter<Oportunity>();
+  @Output() onOportunityApply = new EventEmitter<Oportunity>();
   faPen=faPen;
   faDesactive=faArrowCircleRight;
   faDoorOpen=faDoorOpen;
@@ -31,6 +32,6 @@ export class OportunityCardComponent implements OnInit {
   }
   public oportunityApply(oportunity:Oportunity):void{
     //console.log(student);
-    this.onOportunitySelected.emit(oportunity);
+    this.onOportunityApply.emit(oportunity);
   }
 }

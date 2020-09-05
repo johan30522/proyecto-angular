@@ -31,12 +31,15 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-link" (click)="editJob(job)">{{ "GENERAL.EDIT_BUTTON" | translate }}</button>
+                                    <button type="button" class="btn btn-link" (click)="editJob(job)">{{ "GENERAL.EDIT_BUTTON" | translate }}  <fa-icon [icon]="faPen"></fa-icon></button>
                                     <button type="button" class="btn btn-link" [swal]="{
-                    title: 'Are you sure you want to delete ',
+                    title: 'Esta seguro de Eliminar el registro? ',
                     showCancelButton: true
                   }" (confirm)="deleteJob(job)">
-                  {{ "GENERAL.DELETE_BUTTON" | translate }}
+                  {{ "GENERAL.DELETE_BUTTON" | translate }}  
+
+                  <fa-icon [icon]="faTrash"></fa-icon>
+
                                     </button>
 
                                 </td>
