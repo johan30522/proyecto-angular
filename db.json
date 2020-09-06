@@ -396,6 +396,14 @@
             "id": 1
         },
         {
+            "email": "pedro@gmail.com",
+            "username": "pedro",
+            "password": "123",
+            "uiConfirmPassword": "123",
+            "role": "user",
+            "id": 2
+        },
+        {
             "email": "juan@gmail.com",
             "username": "juan",
             "password": "123",
